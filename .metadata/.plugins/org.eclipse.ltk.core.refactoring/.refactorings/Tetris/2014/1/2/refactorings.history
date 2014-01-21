@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Print&apos; to &apos;Grud&apos;&#x0D;&#x0A;- Original project: &apos;Tetris&apos;&#x0D;&#x0A;- Original element: &apos;Print&apos;&#x0D;&#x0A;- Renamed element: &apos;Grud&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Print&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Print.java[Print" matchStrategy="1" name="Grud" qualified="false" references="true" similarDeclarations="false" stamp="1389295574237" textual="false" version="1.0"/>
+</session>
