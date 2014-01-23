@@ -15,9 +15,6 @@ public class Main {
 	static int currentsid = 0;
 	static int currenttid = 0;
 	
-	public static Display display = new Display();
-
-	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,6 +22,7 @@ public class Main {
 		frame.setLocation(200, 100);
 		frame.setVisible(true);
 		
+		Display display = new Display();
 		frame.add(display);
 		
 		//fills the grid with squares
@@ -34,6 +32,7 @@ public class Main {
 		display.init();
 		
 		settet(2, 2, 0);
+		display.repaint();
 	}
 	
 	private static void createtets() {

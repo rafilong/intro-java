@@ -15,7 +15,7 @@ public class Main {
 	static int currentsid = 0;
 	static int currenttid = 0;
 	
-	public static Display display = new Display();
+	public Display display = new Display();
 
 	
 	public static void main(String[] args) {
