@@ -52,7 +52,7 @@ public class Display extends JComponent{
 		paintGame(g);
 	}
 	
-	private static void paintGame(Graphics g) {
+	public void paintGame(Graphics g) {
 		for (int w = 0; w < Main.gamewidth; w++) {
 			for (int h = 0; h < Main.gameheight - 2; h++) {
 				if (Grid.grid[w][h].hastet) paintTetrimo(g, 0, 0);
@@ -60,17 +60,11 @@ public class Display extends JComponent{
 		}
 	}
 	
-	private static void paintTetrimo(Graphics g, int x, int y) {
+	public void paintTetrimo(Graphics g, int x, int y) {
 		//offset of grid is 22 long, 16 high
 		g.setColor(colors[Grid.grid[x][y].type][1]);
 		//draws from the top-left to the bottom-right
 		g.fillRect(Main.xoffset + x*16, findY(y) - 16, 16, 16);
-		
-		drawEdges(g, x, y);
-	}
-	
-	private static void drawEdges(Graphics g, int x, int y) {
-		
 	}
 		
 	public static int findY(int y) {

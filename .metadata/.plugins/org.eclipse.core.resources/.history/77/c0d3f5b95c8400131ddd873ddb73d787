@@ -25,17 +25,16 @@ public class Main {
 		Display display = new Display();
 		frame.add(display);
 		
-		//fills the grid with squares
 		createtets();
 		
-		//initializes the grid
 		display.init();
-		
+				
 		settet(0, 0, 1);
+		
 		display.repaint();
 	}
 	
-	private static void createtets() {
+	public static void createtets() {
 		for (int x = 0; x < gamewidth; x++) {
 			for (int y = 0; y < gameheight; y++) {
 				Grid.grid[x][y] = new Square(x, y);

@@ -35,7 +35,7 @@ public class Main {
 		display.repaint();
 	}
 	
-	private static void createtets() {
+	public static void createtets() {
 		for (int x = 0; x < gamewidth; x++) {
 			for (int y = 0; y < gameheight; y++) {
 				Grid.grid[x][y] = new Square(x, y);
