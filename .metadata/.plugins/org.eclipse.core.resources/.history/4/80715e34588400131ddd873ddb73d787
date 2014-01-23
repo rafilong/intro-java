@@ -1,5 +1,5 @@
 import javax.swing.JFrame;
-
+/
 public class Main {
 	public static int imgwidth = 204;
 	public static int imgheight = 406;
