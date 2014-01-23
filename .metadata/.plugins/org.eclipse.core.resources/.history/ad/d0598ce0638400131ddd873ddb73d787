@@ -1,20 +1,18 @@
 import javax.swing.JFrame;
 
 public class Main {
-	//game and image dimensions
 	public static int imgwidth = 204;
 	public static int imgheight = 406;
 	public static int gamewidth = 10;
 	public static int gameheight = 22;
 	public static int xoffset = 22;
 	public static int yoffset = 16;
-		
-	//makes the game fullscreen (these variables will be the size of the screen)
+	
+	public static boolean on = false;
 	public static int currentwinx = 0;
 	public static int currentwiny = 0;
 
-	//game variables
-	public static boolean gameon = false;
+	static int currentsid = 0;
 	static int currenttid = 0;
 	
 	public static Display display = new Display();
@@ -40,10 +38,10 @@ public class Main {
 		Time.timeKeeping();
 	}
 	
-	public static void createtets() {
+	private static void createtets() {
 		for (int x = 0; x < gamewidth; x++) {
 			for (int y = 0; y < gameheight; y++) {
-				Grid.grid[x][y] = new Square();
+				Grid.grid[x][y] = new Square(x, y);
 			}
 		}
 	}

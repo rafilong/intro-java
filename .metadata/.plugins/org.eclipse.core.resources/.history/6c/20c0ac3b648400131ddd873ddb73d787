@@ -4,18 +4,21 @@ import java.awt.Color;
 public class Square {
 	boolean hastet = false;
 	
-	//square variables
-	int tetrimoid; //the id of the tetrimo
-	int type; //type of square (decides the color)
-	int xloca; 
+	int tetrimoid;
+	int type;
+	int xloca;
 	int yloca;
+	
 	boolean leftn = false;
 	boolean rightn = false;
 	boolean topn = false;
 	boolean bottomn = false;
-		
-	public Square() {
-		//variables will be declared using settet()
+	
+	int nextid = 0;
+	
+	public Square(int x, int y) {
+		xloca = x;
+		yloca = y;
 	}
 	
 	public static void neighborfind() {
