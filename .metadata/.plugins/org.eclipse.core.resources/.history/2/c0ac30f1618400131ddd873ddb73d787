@@ -76,13 +76,13 @@ public class Display extends JComponent{
 		//sets the color to the light type color
 		g.setColor(colors[1][Grid.grid[x][y].type]);
 		//draws the left line
-		if (!Grid.grid[x][y].leftn) g.drawLine(Main.xoffset + x*16, findY(y) - 16, Main.xoffset + x*16, findY(y) -1);
+		if(Grid.grid[x][y].leftn) g.drawLine(Main.xoffset + x*16, findY(y) - 16, Main.xoffset + x*16, findY(y) -1);
 		//draws the right line
-		if (!Grid.grid[x][y].rightn) g.drawLine(Main.xoffset + x*16 + 16 -1, findY(y) -1, Main.xoffset + x*16 + 16 -1, findY(y) - 16);
+		g.drawLine(Main.xoffset + x*16 + 16 -1, findY(y) -1, Main.xoffset + x*16 + 16 -1, findY(y) - 16);
 		//draws the top line
-		if (!Grid.grid[x][y].topn) g.drawLine(Main.xoffset + x*16 + 16 -1, findY(y) - 16, Main.xoffset + x*16, findY(y) - 16);
+		g.drawLine(Main.xoffset + x*16 + 16 -1, findY(y) - 16, Main.xoffset + x*16, findY(y) - 16);
 		//draws the bottom line
-		if (!Grid.grid[x][y].bottomn) g.drawLine(Main.xoffset + x*16, findY(y) - 1, Main.xoffset + x*16 + 16 -1, findY(y) -1);
+		g.drawLine(Main.xoffset + x*16, findY(y) - 1, Main.xoffset + x*16 + 16 -1, findY(y) -1);
 	}
 		
 	public static int findY(int y) {

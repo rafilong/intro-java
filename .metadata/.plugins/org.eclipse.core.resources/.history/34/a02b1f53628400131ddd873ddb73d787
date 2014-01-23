@@ -45,6 +45,7 @@ public class Main {
 	
 	public static void settet(int x, int y, int type) {
 		Grid.grid[x][y].hastet = true;
+		Grid.grid[x][y].squareid = 0;
 		Grid.grid[x][y].tetrimoid = 0;
 		Grid.grid[x][y].type = type;
 	}

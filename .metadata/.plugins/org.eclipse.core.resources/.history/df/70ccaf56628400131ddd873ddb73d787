@@ -4,6 +4,7 @@ import java.awt.Color;
 public class Square {
 	boolean hastet = false;
 	
+	int squareid;
 	int tetrimoid;
 	int type;
 	int xloca;
