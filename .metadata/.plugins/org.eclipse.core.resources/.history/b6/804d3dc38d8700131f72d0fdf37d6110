@@ -29,6 +29,10 @@ public class Display extends JComponent{
 	private static Color Z = new Color(0xf94e4e);
 	private static Color ZD = new Color(0xae3737);
 	
+	private enum lineside {
+		left, right, top, bottom
+	}
+	
 	//Array is I, J, L, O, S, T, Z
 	private static Color[][] colors = {{I, J, L, O, S, T, Z}, {ID, JD, LD, OD, SD, TD, ZD}};
 

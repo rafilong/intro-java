@@ -90,8 +90,4 @@ public class Display extends JComponent{
 		//the reason this is necessary is that java draws the Y going down, but I have my grid-Y goes up - this translates it
 		return (Main.imgheight - Main.yoffset - y*16);
 	}
-	
-	private static void drawline(Graphics g, int x, int y, enum lineside) {
-		
-	}
 }

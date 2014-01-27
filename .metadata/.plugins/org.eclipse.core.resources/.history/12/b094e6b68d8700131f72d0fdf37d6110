@@ -91,7 +91,7 @@ public class Display extends JComponent{
 		return (Main.imgheight - Main.yoffset - y*16);
 	}
 	
-	private static void drawline(Graphics g, int x, int y, enum lineside) {
+	private static void leftline(Graphics g, int x, int y) {
 		
 	}
 }

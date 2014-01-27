@@ -16,4 +16,17 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///C:/Users/JavaP4/Desktop/29973e1302f024e247758d75f911a7b6.png" added="2014-01-27T19:35:18Z" modified="2014-01-27T19:35:18Z" visited="2014-01-27T19:35:18.647467Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="GNU Image Manipulation Program" exec="&apos;gimp-2.6 %u&apos;" modified="2014-01-27T19:35:18Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>
