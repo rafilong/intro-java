@@ -1,0 +1,22 @@
+private static int[] levwait = {1500, 1250, 1175, 1075, 950}; 
+
+public class Time implements Runnable {
+
+	Thread time;
+	Time() {
+		time = new Thread(this, "Time Thread");
+		time.start();
+	}
+	
+	public static void timeKeeping() {
+
+	}
+
+	//makes as time thread, that keeps track of time
+	public void run() {
+		while (Main.gameon) {
+			Main.display.repaint();
+		}
+		
+	}
+}

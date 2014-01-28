@@ -1,0 +1,9 @@
+
+public class Time {
+
+	public static void timeKeeping() {
+		while (Main.gameon) {
+			Main.display.repaint();
+		}
+	}
+}

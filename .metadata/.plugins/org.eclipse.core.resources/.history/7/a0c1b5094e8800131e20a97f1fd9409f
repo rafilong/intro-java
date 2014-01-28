@@ -1,0 +1,35 @@
+
+public class Time implements Runnable {
+	//each level time is decreased as such:
+	//0, 50, 75, 100, 125, 150, 175, 200, 225, 250
+	
+	//how much time the game should wait between levels
+	private static int[] levwait = {1700, 1450, 1375, 1275, 1150, 1000, 825, 625, 325, 125}; 
+	
+	Thread time;
+	Time() {
+		time = new Thread(this, "Time Thread");
+		time.start();
+	}
+	
+	public static void timeKeeping() {
+
+	}
+
+	//makes as time thread, that keeps track of time
+	public void run() {
+		while (Main.gameon) {
+			long starttime = System.currentTimeMillis();
+			Main.display.repaint();
+			
+			System.out.println("blah");
+			
+			try {
+				Thread.sleep(levwait[1]-(starttime-System.currentTimeMillis()));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}

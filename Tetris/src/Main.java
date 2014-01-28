@@ -6,8 +6,6 @@ public class Main {
 	public static int imgheight = 406;
 	public static int gamewidth = 10;
 	public static int gameheight = 22;
-	public static int xoffset = 22;
-	public static int yoffset = 16;
 		
 	//makes the game fullscreen (these variables will be the size of the screen)
 	public static int currentwinx = 0;
@@ -21,6 +19,8 @@ public class Main {
 
 	
 	public static void main(String[] args) {
+		gameon = true;
+				
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(imgwidth + 16, imgheight + 38);
@@ -37,7 +37,8 @@ public class Main {
 		
 		settet(2, 10, 0);
 		
-		Time.timeKeeping();
+		Time.threadtimestart();
+	
 	}
 	
 	public static void createtets() {
