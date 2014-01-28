@@ -7,14 +7,13 @@ public class Square {
 	//square variables
 	int tetrimoid; //the id of the tetrimo
 	int type; //type of square (decides the color)
-	int xloca; //x coordinate (is it necessary?)
-	int yloca; //y coordinate (is it necessary?)
-	boolean leftn = false; //whether or not it has a left neighbor
-	boolean rightn = false; //whether or not it has a right neighbor
-	boolean topn = false; //whether or not it has a top neighbor
-	boolean bottomn = false; //whether or not it has a bottom neighbor
-	boolean active = false; //whether or not the tetrimo is active
-	
+	int xloca; 
+	int yloca;
+	boolean leftn = false;
+	boolean rightn = false;
+	boolean topn = false;
+	boolean bottomn = false;
+		
 	public Square() {
 		//variables will be declared using settet()
 	}

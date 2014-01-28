@@ -20,14 +20,11 @@ public class Time implements Runnable {
 		timekeeping();
 	}
 	
-	//keeps track of time, and calls methods that need to be called every drop
 	public static void timekeeping() {
 		while (Main.gameon) {
 			long starttime = System.currentTimeMillis();
 			Main.display.repaint();
-			
-			Physics.drop();
-			
+						
 			try {
 				Thread.sleep(levwait[Levels.level -1]-(starttime-System.currentTimeMillis()));
 			} catch (InterruptedException e) {

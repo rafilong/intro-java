@@ -1,0 +1,8 @@
+//makes blocks fall
+public class Physics {
+	public static void drop() {
+		for (int x = 0; x < gamewidth; x++){
+			
+		}
+	}
+}

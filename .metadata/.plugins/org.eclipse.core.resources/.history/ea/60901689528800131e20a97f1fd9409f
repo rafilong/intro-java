@@ -9,7 +9,7 @@ public class Physics {
 					Grid.grid[x][y].active = false;
 					
 					Grid.grid[x][y -1].hastet = true;
-					Grid.grid[x][y -1].active = true;
+					Grid.grid[x][y -1].hastet = false;
 				}
 			}
 		}
