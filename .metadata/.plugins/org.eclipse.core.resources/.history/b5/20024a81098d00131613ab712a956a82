@@ -27,7 +27,7 @@ public class Time implements Runnable {
 			long starttime = System.currentTimeMillis();
 			Main.display.repaint();
 			
-			Physics.dropcall();
+			Physics.drop();
 			
 			try {
 				Thread.sleep(levwait[Levels.level -1]-(starttime-System.currentTimeMillis()));

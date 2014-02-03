@@ -60,53 +60,31 @@ public class Main {
 	}
 	
 	private static void testcase() {
-		int success = 0;
-		int methodsuccess = 0;
+		int successes = 0;
 		
-		//test cases for method 1 - Display.findY()
 		System.out.println("Method 1 Test Cases");
 		System.out.println("calls Display.findY(), which takes a y value in the grid of Squares, and translates it into the y value taken by the Java draw methods, taking into account square width and the offset created by the image");
 		newline();
 		
-		System.out.println("Method 1 Test 1: (1) -> (374)");
+		System.out.println("Case 1 Test 1: (1) -> (374)");
 		System.out.println("Return: " + Display.findY(1));
 		if (Display.findY(1) == 374) {
-			success++;
-			methodsuccess++;
+			successes++;
 			System.out.println("Case 1 Test 1 succeeded");
 		} else {
 			System.out.println("Case 1 Test 1 failed");
 		}
 		newline();
 		
-		System.out.println("Method 1 Test 2: (5) -> (310)");
+		System.out.println("Test 2: (5) -> ()");
 		System.out.println("Test 2 Return: " + Display.findY(5));
-		if (Display.findY(5) == 310) {
-			success++;
-			methodsuccess++;
+		if (Display.findY(5) == 374) {
+			successes++;
 			System.out.println("Case 1 Test 2 succeeded");
 		} else {
 			System.out.println("Case 1 Test 2 failed");
 		}
 		newline();
-		
-		System.out.println("Method 1 Test 3: (42) -> (-282)");
-		System.out.println("Test 3 Return: " + Display.findY(42));
-		if (Display.findY(42) == -282) {
-			success++;
-			methodsuccess++;
-			System.out.println("Case 1 Test 3 succeeded");
-		} else {
-			System.out.println("Case 1 Test 3 failed");
-		}
-		newline();
-		
-		System.out.println(methodsuccess + " sucesses, " + (3-methodsuccess) + " failures in method 1");
-		
-		newline();
-		
-		
-		
 	}
 	
 	private static void newline() {

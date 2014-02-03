@@ -101,7 +101,7 @@ public class Main {
 		}
 		newline();
 		
-		System.out.println(methodsuccess + " sucesses, " + (3-methodsuccess) + " failures in method 1");
+		System.out.println(methodsuccess + " sucesses, " + (0-methodsuccess) + " failures in method 1");
 		
 		newline();
 		
