@@ -35,16 +35,12 @@ public class Square {
 	}
 	
 	public static boolean neighborfind(int x, int y, String side) {
-		boolean retval = false;
-		
 		if (side.equals("left")) {
-			if (sametetrimoid(Grid.grid[x][y], Grid.grid[x-1][y]) && Grid.grid[x-1][y].hastet) retval = true;
+			if (sametetrimoid(Grid.grid[x][y], Grid.grid[x-1][y]) && Grid.grid[x-1][y].hastet) return true;
 		}
 		if (side.equals("right")) {
 			
 		}
-		
-		return retval;
 	}
 	
 	public static boolean sametetrimoid(Square s1, Square s2) {

@@ -39,7 +39,7 @@ public class Main {
 		
 		settet(2, 10, 0);
 		
-//		Time.threadtimestart();
+		Time.threadtimestart();
 	
 		testcase();
 	}
@@ -123,9 +123,9 @@ public class Main {
 		}
 		newline();
 		
-		System.out.println("Method 2 Test 2: Squares in [1][1] and [1][3] with the same id; (1, 1, 'right') -> false");
-		System.out.println("Test 2 Return: " + Square.neighborfind(1, 1, "right"));
-		if (!Square.neighborfind(1, 1, "right")) {
+		System.out.println("Method 2 Test 2: Squares in [1][1] and [1][3] with the same id; (1, 1, 'top') -> true"");
+		System.out.println("Test 2 Return: " + Display.findY(5));
+		if (Display.findY(5) == 310) {
 			success++;
 			methodsuccess++;
 			System.out.println("Method 2 Test 2 succeeded");
@@ -134,7 +134,7 @@ public class Main {
 		}
 		newline();
 		
-		System.out.println("Method 1 Test 3: Squares in [1][1] and [1][2] with the same id; (1, 1, 'top') -> true");
+		System.out.println("Method 1 Test 3: Squares in [1][1] and [1][2] with the same id; (1, 1, 'top') -> true"");
 		System.out.println("Test 3 Return: " + Display.findY(42));
 		if (Display.findY(42) == -282) {
 			success++;
