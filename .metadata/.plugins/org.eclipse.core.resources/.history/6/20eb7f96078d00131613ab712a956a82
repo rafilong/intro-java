@@ -55,6 +55,7 @@ public class Display extends JComponent {
 	}
 	
 	public void paintComponent(Graphics g) {
+		System.out.println("hi");
 		//draws the image
 		g.drawImage(background, 0, 0, null);
 		//paints the tetrimos

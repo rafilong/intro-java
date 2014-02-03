@@ -60,6 +60,5 @@ public class Main {
 	public static void testcase() {
 		System.out.println("Test Case 1");
 		System.out.println("calls Display.findY(), which takes a y value in the grid of Squares, and translates it into the y value taken by the Java draw methods, taking into account square width and the offset created by the image");
-		System.out.println("Test: (1) -> (");
 	}
 }
