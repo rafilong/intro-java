@@ -7,7 +7,7 @@ public class Main {
 	public static int imgwidth = 204;
 	public static int imgheight = 406;
 	public static int gamewidth = 10;
-	public static int gameheight = 24;
+	public static int gameheight = 22;
 		
 	//makes the game fullscreen (these variables will be the size of the screen)
 	public static int currentwinx = 0;

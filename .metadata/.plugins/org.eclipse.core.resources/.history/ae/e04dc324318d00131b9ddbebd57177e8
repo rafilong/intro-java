@@ -2,5 +2,5 @@
 //keeps track of current game stats
 
 public class Levels {
-	public static int level = 9;
+	public static int level = 1;
 }
