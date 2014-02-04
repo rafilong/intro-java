@@ -12,12 +12,16 @@ public class Physics {
 	}
 	
 	public static void drop(int x, int y) {
-		if (Grid.grid[x][y].hastet && Grid.grid[x][y].active) {
-			Grid.grid[x][y].hastet = false;
-			Grid.grid[x][y].active = false;
-			
-			Grid.grid[x][y -1].hastet = true;
+		if (Grid.grid[x][y].hassquare && Grid.grid[x][y].active) {
+			Grid.grid[x][y -1].hassquare = true;
 			Grid.grid[x][y -1].active = true;
+			Grid.grid[x][y -1].tetrimoid = Grid.grid[x][y].tetrimoid;
+			Grid.grid[x][y -1].type = Grid.grid[x][y].type;
+			
+			Grid.grid[x][y].hassquare = false;
+			Grid.grid[x][y].active = false;
+			Grid.grid[x][y].tetrimoid = 0;
+			Grid.grid[x][y].type = 0;
 		}
 	}
 }

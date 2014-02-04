@@ -4,7 +4,7 @@ import java.awt.Color;
 
 
 public class Square {
-	boolean hastet = false;
+	boolean hassquare = false;
 	
 	//square variables
 	int tetrimoid; //the id of the tetrimo
@@ -24,7 +24,7 @@ public class Square {
 	public static void neighborfindcall() {
 		for (int x = 0; x < Main.gamewidth; x++) {
 			for (int y = 0; y < Main.gameheight; y++) {
-				if (Grid.grid[x][y].hastet) {
+				if (Grid.grid[x][y].hassquare) {
 					Grid.grid[x][y].leftn = neighborfind(x, y, "left");
 					Grid.grid[x][y].rightn = sametetrimoid(Grid.grid[x][y], Grid.grid[x+1][y]);
 					Grid.grid[x][y].topn = sametetrimoid(Grid.grid[x][y], Grid.grid[x][y+1]);
@@ -38,7 +38,7 @@ public class Square {
 		boolean retval = false;
 		
 		if (side.equals("left")) {
-			if (sametetrimoid(Grid.grid[x][y], Grid.grid[x-1][y]) && Grid.grid[x-1][y].hastet) retval = true;
+			if (sametetrimoid(Grid.grid[x][y], Grid.grid[x-1][y]) && Grid.grid[x-1][y].hassquare) retval = true;
 		}
 		if (side.equals("right")) {
 			

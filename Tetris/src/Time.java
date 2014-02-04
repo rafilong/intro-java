@@ -23,18 +23,25 @@ public class Time implements Runnable {
 	
 	//keeps track of time, and calls methods that need to be called every drop
 	public static void timekeeping() {
+		long starttime = System.currentTimeMillis();
+		sleep(starttime);
+		
 		while (Main.gameon) {
-			long starttime = System.currentTimeMillis();
+			starttime = System.currentTimeMillis();
 			Main.display.repaint();
 			
 			Physics.dropcall();
 			
-			try {
-				Thread.sleep(levwait[Levels.level -1]-(starttime-System.currentTimeMillis()));
-			} catch (InterruptedException e) {
-				System.out.println("Time thread died");
-				e.printStackTrace();
-			}
+			sleep(starttime);
+		}
+	}
+	
+	private static void sleep(long starttime) {
+		try {
+			Thread.sleep(levwait[Levels.level -1]-(starttime-System.currentTimeMillis()));
+		} catch (InterruptedException e) {
+			System.out.println("Time thread died");
+			e.printStackTrace();
 		}
 	}
 }

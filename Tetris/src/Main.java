@@ -32,19 +32,19 @@ public class Main {
 		frame.add(display);
 		
 		//fills the grid with squares
-		createtets();
+		createsquares();
 		
 		//initializes the grid
 		display.init();
 		
-		settet(2, 10, 0);
+		setsquare(2, 20, 3);
 		
-//		Time.threadtimestart();
+		Time.threadtimestart();
 	
 		testcase();
 	}
 	
-	public static void createtets() {
+	public static void createsquares() {
 		for (int x = 0; x < gamewidth; x++) {
 			for (int y = 0; y < gameheight; y++) {
 				Grid.grid[x][y] = new Square();
@@ -52,8 +52,8 @@ public class Main {
 		}
 	}
 	
-	public static void settet(int x, int y, int type) {
-		Grid.grid[x][y].hastet = true;
+	public static void setsquare(int x, int y, int type) {
+		Grid.grid[x][y].hassquare = true;
 		Grid.grid[x][y].active = true;
 		Grid.grid[x][y].tetrimoid = 0;
 		Grid.grid[x][y].type = type;
@@ -134,7 +134,7 @@ public class Main {
 		}
 		newline();
 		
-		System.out.println("Method 1 Test 3: Squares in [1][1] and [1][2] with the same id; (1, 1, 'top') -> true");
+		System.out.println("Method 1 Test 3: Squares in [1][1] and [2][1] with the same id; (1, 1, 'top') -> true");
 		System.out.println("Test 3 Return: " + Display.findY(42));
 		if (Display.findY(42) == -282) {
 			success++;
