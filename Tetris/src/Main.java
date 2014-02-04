@@ -37,9 +37,10 @@ public class Main {
 		//initializes the grid
 		display.init();
 		
-		setSquare(2, 20, 3, 0);
+		setSquare(2, 20, 4, 0);
 		
-//		Time.threadTimeStart();
+		//commented out as this messes up the test cases that involve neighbors
+		Time.threadTimeStart();
 	
 		testCase();
 	}
@@ -63,6 +64,10 @@ public class Main {
 	private static void testCase() {
 		int success = 0;
 		int methodSuccess = 0;
+		
+		System.out.println("Method documentation is found in the method");
+		newLine();
+		newLine();
 		
 		//test cases for method 1 - Display.findY()
 		System.out.println("Method 1 Test Cases");
@@ -102,7 +107,7 @@ public class Main {
 		}
 		newLine();
 		
-		System.out.println(methodSuccess + " successes, " + (3-methodSuccess) + " failures in method 1");
+		System.out.println(methodSuccess + " successes, " + (3-methodSuccess) + " failures in method 2");
 		methodSuccess = 0;
 		
 		newLine();
@@ -153,13 +158,56 @@ public class Main {
 		}
 		newLine();
 		
-		System.out.println(methodSuccess + " successes, " + (3-methodSuccess) + " failures in method 1");
+		System.out.println(methodSuccess + " successes, " + (3-methodSuccess) + " failures in method 3");
+		methodSuccess = 0;
 		
 		newLine();
 		newLine();
 		
+		//test cases for method 3 - Display.colors
+		System.out.println("Method 3 Test Cases");
+		System.out.println("Display.colors is a 2-dimensional array with the purpose of storing colors for the tetrimos - light colors go on one row, which are used for the body of the squares, and dark colors go on another, which are used for the outlines");
+		newLine();
 		
+		System.out.println("Method 3 Test 1: Display.colors[0][0] == Display.I -> true");
+		System.out.println("Return: " + (Display.colors[0][0] == Display.I));
+		if (Display.colors[0][0] == Display.I) {
+			success++;
+			methodSuccess++;
+			System.out.println("Method 3 Test 1 succeeded");
+		} else {
+			System.out.println("Method 3 Test 1 failed");
+		}
+		newLine();
 		
+		System.out.println("Method 3 Test 2: Display.colors[0][3] == Display.O -> true");
+		System.out.println("Test 2 Return: " + (Display.colors[0][3] == Display.O));
+		if (Display.colors[0][3] == Display.O) {
+			success++;
+			methodSuccess++;
+			System.out.println("Method 3 Test 2 succeeded");
+		} else {
+			System.out.println("Method 3 Test 2 failed");
+		}
+		newLine();
+		
+		System.out.println("Method 3 Test 2: Display.colors[1][4] == Display.SD -> true");
+		System.out.println("Test 3 Return: " + (Display.colors[1][4] == Display.SD));
+		if (Display.colors[1][4] == Display.SD) {
+			success++;
+			methodSuccess++;
+			System.out.println("Method 3 Test 3 succeeded");
+		} else {
+			System.out.println("Method 3 Test 3 failed");
+		}
+		newLine();
+		
+		System.out.println(methodSuccess + " successes, " + (3-methodSuccess) + " failures in method 3");
+		
+		newLine();
+		newLine();
+		
+		System.out.println(success + " total successes, " + (9-success) + " failures in total");
 	}
 	
 	private static void newLine() {
