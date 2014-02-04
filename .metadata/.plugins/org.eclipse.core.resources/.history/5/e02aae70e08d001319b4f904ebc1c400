@@ -16,7 +16,7 @@ public class Time implements Runnable {
 		time.start();
 	}
 	
-	//calls timeKeeping when the thread time starts
+	//calls timekeeping when the thread time starts
 	public void run() {
 		timeKeeping();
 	}

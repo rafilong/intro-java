@@ -49,8 +49,8 @@ public class Main {
 		setSquare(3, 2, 3, 0);
 		setSquare(4, 5, 4, 1);
 		setSquare(5, 17, 5, 0);
-		setSquare(6, 6, 4, 1);
-		setSquare(7, 13, 4, 0);
+		setSquare(6, 6, 7, 1);
+		setSquare(7, 13, 8, 0);
 		setSquare(8, 7, 2, 1);
 		setSquare(9, 19, 1, 0);
 		

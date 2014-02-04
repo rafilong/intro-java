@@ -43,16 +43,16 @@ public class Main {
 		display.init();
 		
 		//sets squares to values (x, y, type, tetrimoId)
-		setSquare(0, 1, 0, 0);
-		setSquare(1, 4, 1, 1);
-		setSquare(2, 10, 3, 0);
-		setSquare(3, 2, 3, 0);
-		setSquare(4, 5, 4, 1);
-		setSquare(5, 17, 5, 0);
-		setSquare(6, 6, 4, 1);
-		setSquare(7, 13, 4, 0);
-		setSquare(8, 7, 2, 1);
-		setSquare(9, 19, 1, 0);
+		setSquare(2, 0, 0, 0);
+		setSquare(4, 1, 1, 1);
+		setSquare(10, 2, 3, 0);
+		setSquare(2, 3, 3, 0);
+		setSquare(5, 4, 4, 1);
+		setSquare(17, 5, 5, 0);
+		setSquare(6, 6, 7, 1);
+		setSquare(13, 7, 8, 0);
+		setSquare(7, 8, 2, 1);
+		setSquare(19, 9, 1, 0);
 		
 		//comment out when you don't want blocks to fall
 		Time.threadTimeStart();		
