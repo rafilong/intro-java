@@ -23,9 +23,11 @@ public class Time implements Runnable {
 	
 	//keeps track of time, and calls methods that need to be called every drop
 	public static void timeKeeping() {
+		//the startTime helps keep track of how much time has passed since the loop started, which keeps the computer's performance from effecting game speed
 		long startTime = System.currentTimeMillis();
 		sleep(startTime);
 		
+		//a loop that calls methods after every drop
 		while (Main.gameOn) {
 			startTime = System.currentTimeMillis();
 			Main.display.repaint();
@@ -37,6 +39,7 @@ public class Time implements Runnable {
 	}
 	
 	private static void sleep(long startTime) {
+		//sleeps for the amount of time alloted, removing how much time has passed since the beginning of the loop
 		try {
 			Thread.sleep(levWait[Levels.level -1]-(startTime-System.currentTimeMillis()));
 		} catch (InterruptedException e) {

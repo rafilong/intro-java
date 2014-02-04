@@ -46,6 +46,7 @@ public class Main {
 	}
 	
 	public static void createSquares() {
+		//creates squares
 		for (int x = 0; x < gameWidth; x++) {
 			for (int y = 0; y < gameHeight; y++) {
 				Grid.grid[x][y] = new Square();
@@ -54,6 +55,7 @@ public class Main {
 	}
 	
 	public static void setSquare(int x, int y, int type, int id) {
+		//sets the values of the squares, only for testing purposes
 		Grid.grid[x][y].hasSquare = true;
 		Grid.grid[x][y].active = true;
 		Grid.grid[x][y].tetrimoId = 0;
@@ -62,6 +64,7 @@ public class Main {
 	}
 	
 	private static void testCase() {
+		//these variables keep track of how many succeses there are - successes are printed to the console
 		int success = 0;
 		int methodSuccess = 0;
 		

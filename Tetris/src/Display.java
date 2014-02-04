@@ -17,23 +17,23 @@ public class Display extends JComponent {
 	//colors picked from http://www.w3schools.com/tags/ref_colorpicker.asp
 	//colors are named [tetrimo type] + ["" or "D"]
 	//dark colors are 3 levels darker
-	private static Color I = new Color(0x00cfcf);
-	private static Color ID = new Color(0x009191);
-	private static Color J = new Color(0x297acc);
-	private static Color JD = new Color(0x1D558F);
-	private static Color L = new Color(0xff8000);
-	private static Color LD = new Color(0xb25a00);
-	private static Color O = new Color(0xfbf579);
-	private static Color OD = new Color(0xb0ac55);
-	private static Color S = new Color(0x80db70);
-	private static Color SD = new Color(0x4e994e);
-	private static Color T = new Color(0xad44d6);
-	private static Color TD = new Color(0x792496);
-	private static Color Z = new Color(0xf94e4e);
-	private static Color ZD = new Color(0xae3737);
+	public static Color I = new Color(0x00cfcf);
+	public static Color ID = new Color(0x009191);
+	public static Color J = new Color(0x297acc);
+	public static Color JD = new Color(0x1D558F);
+	public static Color L = new Color(0xff8000);
+	public static Color LD = new Color(0xb25a00);
+	public static Color O = new Color(0xfbf579);
+	public static Color OD = new Color(0xb0ac55);
+	public static Color S = new Color(0x80db70);
+	public static Color SD = new Color(0x4e994e);
+	public static Color T = new Color(0xad44d6);
+	public static Color TD = new Color(0x792496);
+	public static Color Z = new Color(0xf94e4e);
+	public static Color ZD = new Color(0xae3737);
 	
 	//array is I, J, L, O, S, T, Z
-	private static Color[][] colors = {{I, J, L, O, S, T, Z}, {ID, JD, LD, OD, SD, TD, ZD}};
+	public static Color[][] colors = {{I, J, L, O, S, T, Z}, {ID, JD, LD, OD, SD, TD, ZD}};
 
 	//Dimension variables
 	//offsets for image (distances from edge to start of game)
@@ -43,7 +43,7 @@ public class Display extends JComponent {
 	public static int squareDim = 16;
 	
 	public Display() {
-		//load image
+		//loads the background image to the variable 'background'
 		try {
 			background = ImageIO.read(new File("Board.png"));
 		} catch (IOException e) {
@@ -52,6 +52,7 @@ public class Display extends JComponent {
 	}
 	
 	public void init() {
+		//sets the size of JComponent
 		setSize(Main.imgWidth, Main.imgHeight);
 		repaint();
 	}
@@ -101,6 +102,7 @@ public class Display extends JComponent {
 	}
 	
 	private static void drawline(Graphics g, int x, int y, String side) {
+		//draws the edges according to which side is included in the arguments
 		if (side.equals("left")) g.drawLine(xOffset + x*squareDim, findY(y+1), xOffset + x*squareDim, findY(y) -1);
 		if (side.equals("right")) g.drawLine(xOffset + (x+1)*squareDim -1, findY(y) -1, xOffset + (x+1)*squareDim -1, findY(y+1));
 		if (side.equals("top")) g.drawLine(xOffset + (x+1)*16 -1, findY(y+1), xOffset + x*16, findY(y+1));
