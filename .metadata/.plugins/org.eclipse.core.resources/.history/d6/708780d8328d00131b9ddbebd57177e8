@@ -134,8 +134,8 @@ public class Main {
 		}
 		newline();
 		
-		System.out.println("Method 1 Test 3: Squares in [1][1] and [2][1] with the same id; (1, 1, 'top') -> false");
-		System.out.println("Test 3 Return: " + Square.neighborfind(1, 1, "top"));
+		System.out.println("Method 1 Test 3: Squares in [1][1] and [2][1] with the same id; (1, 1, 'top') -> true");
+		System.out.println("Test 3 Return: " + Display.findY(42));
 		if (Display.findY(42) == -282) {
 			success++;
 			methodsuccess++;
