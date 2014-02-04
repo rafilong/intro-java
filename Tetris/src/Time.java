@@ -5,40 +5,40 @@ public class Time implements Runnable {
 	//0, 50, 75, 100, 125, 150, 175, 200, 225, 250
 	
 	//how much time the game should wait between levels
-	private static int[] levwait = {1700, 1450, 1375, 1275, 1150, 1000, 825, 625, 325, 125}; 
+	private static int[] levWait = {1700, 1450, 1375, 1275, 1150, 1000, 825, 625, 325, 125}; 
 	
 	//thread time repaints and calls methods after periods of time
 	Thread time;
 
 	//starts the thread time
-	public static void threadtimestart() {
+	public static void threadTimeStart() {
 		Thread time = new Thread(new Time());
 		time.start();
 	}
 	
 	//calls timekeeping when the thread time starts
 	public void run() {
-		timekeeping();
+		timeKeeping();
 	}
 	
 	//keeps track of time, and calls methods that need to be called every drop
-	public static void timekeeping() {
-		long starttime = System.currentTimeMillis();
-		sleep(starttime);
+	public static void timeKeeping() {
+		long startTime = System.currentTimeMillis();
+		sleep(startTime);
 		
-		while (Main.gameon) {
-			starttime = System.currentTimeMillis();
+		while (Main.gameOn) {
+			startTime = System.currentTimeMillis();
 			Main.display.repaint();
 			
-			Physics.dropcall();
+			Physics.dropCall();
 			
-			sleep(starttime);
+			sleep(startTime);
 		}
 	}
 	
-	private static void sleep(long starttime) {
+	private static void sleep(long startTime) {
 		try {
-			Thread.sleep(levwait[Levels.level -1]-(starttime-System.currentTimeMillis()));
+			Thread.sleep(levWait[Levels.level -1]-(startTime-System.currentTimeMillis()));
 		} catch (InterruptedException e) {
 			System.out.println("Time thread died");
 			e.printStackTrace();

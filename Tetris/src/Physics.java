@@ -3,28 +3,28 @@
 //Documentation of the methods are in the method
 public class Physics {
 	
-	public static void dropcall() {
-		for (int x = 0; x < Main.gamewidth; x++) {
-			for (int y = 0; y < Main.gameheight; y++) {
+	public static void dropCall() {
+		for (int x = 0; x < Main.gameWidth; x++) {
+			for (int y = 0; y < Main.gameHeight; y++) {
 				drop(x, y);
 			}
 		}
 	}
 	
 	public static void drop(int x, int y) {
-		if (Grid.grid[x][y].hassquare && Grid.grid[x][y].active) {
+		if (Grid.grid[x][y].hasSquare && Grid.grid[x][y].active) {
 			if (y-1 >= 0) {
 				Square square = Grid.grid[x][y];
 				Square belowSquare = Grid.grid[x][y -1];
 				
-				belowSquare.hassquare = true;
+				belowSquare.hasSquare = true;
 				belowSquare.active = true;
-				belowSquare.tetrimoid = Grid.grid[x][y].tetrimoid;
+				belowSquare.tetrimoId = Grid.grid[x][y].tetrimoId;
 				belowSquare.type = Grid.grid[x][y].type;
 				
-				square.hassquare = false;
+				square.hasSquare = false;
 				square.active = false;
-				square.tetrimoid = 0;
+				square.tetrimoId = 0;
 				square.type = 0;
 			}
 		}

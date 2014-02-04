@@ -37,10 +37,10 @@ public class Display extends JComponent {
 
 	//Dimension variables
 	//offsets for image (distances from edge to start of game)
-	public static int xoffset = 22;
-	public static int yoffset = 16;
+	public static int xOffset = 22;
+	public static int yOffset = 16;
 	//dimensions of the square pieces
-	public static int squaredim = 16;
+	public static int squareDim = 16;
 	
 	public Display() {
 		//load image
@@ -52,7 +52,7 @@ public class Display extends JComponent {
 	}
 	
 	public void init() {
-		setSize(Main.imgwidth, Main.imgheight);
+		setSize(Main.imgWidth, Main.imgHeight);
 		repaint();
 	}
 	
@@ -65,9 +65,9 @@ public class Display extends JComponent {
 	
 	private static void paintGame(Graphics g) {
 		//runs through the grid and draws them if there is a square there
-		for (int w = 0; w < Main.gamewidth; w++) {
-			for (int h = 0; h < Main.gameheight - 2; h++) {
-				if (Grid.grid[w][h].hassquare) paintTetrimo(g, w, h);
+		for (int w = 0; w < Main.gameWidth; w++) {
+			for (int h = 0; h < Main.gameHeight - 2; h++) {
+				if (Grid.grid[w][h].hasSquare) paintTetrimo(g, w, h);
 			}
 		}
 	}
@@ -76,7 +76,7 @@ public class Display extends JComponent {
 		//sets the color to the dark type color
 		g.setColor(colors[0][Grid.grid[x][y].type]);
 		//draws from the top-left to the bottom-right
-		g.fillRect(xoffset + x*16, findY(y) - 16, 16, 16);
+		g.fillRect(xOffset + x*16, findY(y) - 16, 16, 16);
 		
 		drawEdges(g, x, y);
 	}
@@ -85,25 +85,25 @@ public class Display extends JComponent {
 		//sets the color to the light type color
 		g.setColor(colors[1][Grid.grid[x][y].type]);
 		//draws the left line if there is no neighbor
-		if (!Grid.grid[x][y].leftn) drawline(g, x, y, "left");
+		if (!Grid.grid[x][y].leftN) drawline(g, x, y, "left");
 		//draws the right line if there is no neighbor
-		if (!Grid.grid[x][y].rightn) drawline(g, x, y, "right");
+		if (!Grid.grid[x][y].rightN) drawline(g, x, y, "right");
 		//draws the top line if there is no neighbor
-		if (!Grid.grid[x][y].topn) drawline(g, x, y, "top");
+		if (!Grid.grid[x][y].topN) drawline(g, x, y, "top");
 		//draws the bottom line if there is no neighbor
-		if (!Grid.grid[x][y].bottomn) drawline(g, x, y, "bottom");
+		if (!Grid.grid[x][y].bottomN) drawline(g, x, y, "bottom");
 	}
 		
 	public static int findY(int y) {
 		//finds the y value of the coordinate
 		//the reason this is necessary is that java draws the Y going down, but I have my grid-Y goes up - this translates it
-		return (Main.imgheight - yoffset - y*squaredim);
+		return (Main.imgHeight - yOffset - y*squareDim);
 	}
 	
 	private static void drawline(Graphics g, int x, int y, String side) {
-		if (side.equals("left")) g.drawLine(xoffset + x*squaredim, findY(y+1), xoffset + x*squaredim, findY(y) -1);
-		if (side.equals("right")) g.drawLine(xoffset + (x+1)*squaredim -1, findY(y) -1, xoffset + (x+1)*squaredim -1, findY(y+1));
-		if (side.equals("top")) g.drawLine(xoffset + (x+1)*16 -1, findY(y+1), xoffset + x*16, findY(y+1));
-		if (side.equals("bottom")) g.drawLine(xoffset + x*16, findY(y) - 1, xoffset + (x+1)*16 -1, findY(y) -1);
+		if (side.equals("left")) g.drawLine(xOffset + x*squareDim, findY(y+1), xOffset + x*squareDim, findY(y) -1);
+		if (side.equals("right")) g.drawLine(xOffset + (x+1)*squareDim -1, findY(y) -1, xOffset + (x+1)*squareDim -1, findY(y+1));
+		if (side.equals("top")) g.drawLine(xOffset + (x+1)*16 -1, findY(y+1), xOffset + x*16, findY(y+1));
+		if (side.equals("bottom")) g.drawLine(xOffset + x*16, findY(y) - 1, xOffset + (x+1)*16 -1, findY(y) -1);
 	}
 }
