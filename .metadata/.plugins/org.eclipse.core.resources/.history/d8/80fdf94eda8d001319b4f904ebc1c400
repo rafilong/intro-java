@@ -44,8 +44,10 @@ public class Main {
 		
 		setSquare(2, 20, 4, 0);
 		
-		//comment out when you don't want blocks to fall
+		//commented out as this messes up the test cases that involve neighbors
 		Time.threadTimeStart();
+	
+		testCase();
 	}
 	
 	public static void createSquares() {
