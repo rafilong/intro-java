@@ -4,154 +4,157 @@ import javax.swing.JFrame;
 
 public class Main {
 	//game and image dimensions
-	public static int imgwidth = 204;
-	public static int imgheight = 406;
-	public static int gamewidth = 10;
-	public static int gameheight = 24;
+	public static int imgWidth = 204;
+	public static int imgHeight = 406;
+	public static int gameWidth = 10;
+	public static int gameHeight = 24;
 		
 	//makes the game fullscreen (these variables will be the size of the screen)
-	public static int currentwinx = 0;
-	public static int currentwiny = 0;
+	public static int currentWinX = 0;
+	public static int currentWinY = 0;
 
 	//game variables
-	public static boolean gameon = false;
-	static int currenttid = 0;
+	public static boolean gameOn = false;
+	static int currentId = 0;
 	
 	public static Display display = new Display();
 
 	
 	public static void main(String[] args) {
-		gameon = true;
+		gameOn = true;
 				
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(imgwidth + 16, imgheight + 38);
+		frame.setSize(imgWidth + 16, imgHeight + 38);
 		frame.setLocation(200, 100);
 		frame.setVisible(true);
 		
 		frame.add(display);
 		
 		//fills the grid with squares
-		createsquares();
+		createSquares();
 		
 		//initializes the grid
 		display.init();
 		
-		setsquare(2, 20, 3);
+		setSquare(2, 20, 3, 0);
 		
-		Time.threadtimestart();
+//		Time.threadTimeStart();
 	
-		testcase();
+		testCase();
 	}
 	
-	public static void createsquares() {
-		for (int x = 0; x < gamewidth; x++) {
-			for (int y = 0; y < gameheight; y++) {
+	public static void createSquares() {
+		for (int x = 0; x < gameWidth; x++) {
+			for (int y = 0; y < gameHeight; y++) {
 				Grid.grid[x][y] = new Square();
 			}
 		}
 	}
 	
-	public static void setsquare(int x, int y, int type) {
-		Grid.grid[x][y].hassquare = true;
+	public static void setSquare(int x, int y, int type, int id) {
+		Grid.grid[x][y].hasSquare = true;
 		Grid.grid[x][y].active = true;
-		Grid.grid[x][y].tetrimoid = 0;
+		Grid.grid[x][y].tetrimoId = 0;
 		Grid.grid[x][y].type = type;
+		Grid.grid[x][y].tetrimoId = id;
 	}
 	
-	private static void testcase() {
+	private static void testCase() {
 		int success = 0;
-		int methodsuccess = 0;
+		int methodSuccess = 0;
 		
 		//test cases for method 1 - Display.findY()
 		System.out.println("Method 1 Test Cases");
 		System.out.println("calls Display.findY(), which takes a y value in the grid of Squares, and translates it into the y value taken by the Java draw methods, taking into account square width and the offset created by the image");
-		newline();
+		newLine();
 		
 		System.out.println("Method 1 Test 1: (1) -> (374)");
 		System.out.println("Return: " + Display.findY(1));
 		if (Display.findY(1) == 374) {
 			success++;
-			methodsuccess++;
+			methodSuccess++;
 			System.out.println("Method 1 Test 1 succeeded");
 		} else {
 			System.out.println("Method 1 Test 1 failed");
 		}
-		newline();
+		newLine();
 		
 		System.out.println("Method 1 Test 2: (5) -> (310)");
 		System.out.println("Test 2 Return: " + Display.findY(5));
 		if (Display.findY(5) == 310) {
 			success++;
-			methodsuccess++;
+			methodSuccess++;
 			System.out.println("Method 1 Test 2 succeeded");
 		} else {
 			System.out.println("Method 1 Test 2 failed");
 		}
-		newline();
+		newLine();
 		
 		System.out.println("Method 1 Test 3: (42) -> (-282)");
 		System.out.println("Test 3 Return: " + Display.findY(42));
 		if (Display.findY(42) == -282) {
 			success++;
-			methodsuccess++;
+			methodSuccess++;
 			System.out.println("Method 1 Test 3 succeeded");
 		} else {
 			System.out.println("Method 1 Test 3 failed");
 		}
-		newline();
+		newLine();
 		
-		System.out.println(methodsuccess + " sucesses, " + (3-methodsuccess) + " failures in method 1");
-		methodsuccess = 0;
+		System.out.println(methodSuccess + " successes, " + (3-methodSuccess) + " failures in method 1");
+		methodSuccess = 0;
 		
-		newline();
-		newline();
+		newLine();
+		newLine();
 		
 		//test cases for method 2 - Square.neighborfind()
 		System.out.println("Method 2 Test Cases");
 		System.out.println("calls Square.neighborfind(), which takes an x value, y value, and a side as arguments. It then searches the side indicated for whether it has a square, and whether the square shares the same tetrimoid. It returns a boolean for true if the tetrimo id is the same for the neighbor and the neighbor has a square");
-		newline();
+		newLine();
 		
 		System.out.println("Method 2 Test 1: Squares in [1][1] and [1][2] with the same id; (1, 1, 'top') -> true");
-		System.out.println("Return: " + Square.neighborfind(1, 1, "top"));
-		if (Square.neighborfind(1, 1, "top")) {
+		setSquare(1, 1, 1, 1);
+		setSquare(1, 2, 1, 1);
+		System.out.println("Return: " + Square.neighborFind(1, 1, "top"));
+		if (Square.neighborFind(1, 1, "top")) {
 			success++;
-			methodsuccess++;
+			methodSuccess++;
 			System.out.println("Method 2 Test 1 succeeded");
 		} else {
 			System.out.println("Method 2 Test 1 failed");
 		}
-		newline();
+		newLine();
 		
-		System.out.println("Method 2 Test 2: Squares in [1][1] and [1][3] with the same id; (1, 1, 'right') -> false");
-		System.out.println("Test 2 Return: " + Square.neighborfind(1, 1, "right"));
-		if (!Square.neighborfind(1, 1, "right")) {
+		System.out.println("Method 2 Test 2: Squares in [4][1] and [5][1] with the same id; (1, 1, 'right') -> true");
+		System.out.println("Test 2 Return: " + Square.neighborFind(4, 5, "right"));
+		if (Square.neighborFind(4, 5, "right")) {
 			success++;
-			methodsuccess++;
+			methodSuccess++;
 			System.out.println("Method 2 Test 2 succeeded");
 		} else {
 			System.out.println("Method 2 Test 2 failed");
 		}
-		newline();
+		newLine();
 		
-		System.out.println("Method 1 Test 3: Squares in [1][1] and [2][1] with the same id; (1, 1, 'top') -> false");
-		System.out.println("Test 3 Return: " + Square.neighborfind(1, 1, "top"));
-		if (Display.findY(42) == -282) {
+		System.out.println("Method 1 Test 3: Squares in [1][1] and [2][1] with the same id; (1, 1, 'left') -> false");
+		System.out.println("Test 3 Return: " + Square.neighborFind(1, 1, "top"));
+		if (Square.neighborFind(1, 1, "left")) {
 			success++;
-			methodsuccess++;
+			methodSuccess++;
 			System.out.println("Method 2 Test 3 succeeded");
 		} else {
 			System.out.println("Method 2 Test 3 failed");
 		}
-		newline();
+		newLine();
 		
-		System.out.println(methodsuccess + " sucesses, " + (3-methodsuccess) + " failures in method 1");
+		System.out.println(methodSuccess + " successes, " + (3-methodSuccess) + " failures in method 1");
 		
-		newline();
-		newline();
+		newLine();
+		newLine();
 	}
 	
-	private static void newline() {
+	private static void newLine() {
 		System.out.println();
 	}
 }
