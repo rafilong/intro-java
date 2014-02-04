@@ -67,6 +67,6 @@ public class Square {
         int ranTI = (int) ranT;
         int ranIdI = (int) ranId;
         		
-        Main.setSquare(ranXI, Main.gameHeight-1, ranTI, 1);
+        Main.setSquare(ranXI, Main.gameHeight-1, ranTI, ranIdI);
 	}
 }

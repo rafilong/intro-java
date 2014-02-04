@@ -57,5 +57,7 @@ public class Physics {
 		for (int x = 0; x < Main.gameWidth; x++) {
 			removeSquare(Grid.grid[x][yclear]);
 		}
+		
+		Main.testingSuite();
 	}
 }

@@ -59,14 +59,15 @@ public class Square {
 	
 	public static void randomPlace() {
     	// randomize resets the grid with randomly generated cells
-        double ranX = Math.random() * Main.gameWidth;
-        double ranT = Math.random() * 7;
-        double ranId = Math.random() * 100;
-        
-        int ranXI = (int) ranX;
-        int ranTI = (int) ranT;
-        int ranIdI = (int) ranId;
+    	for (int x = 0; x < Main.gameWidth; x++) {
+            for (int y = 0; y < Main.gameHeight; y++) {
+        		int ranX = (int) Math.random() * Main.gameWidth;
+        		int ranY = (int) Math.random() * Main.gameHeight;
+        		int ranT = (int) Math.random() * 8;
+        		int ranId = (int) Math.random() * 100;
         		
-        Main.setSquare(ranXI, Main.gameHeight-1, ranTI, 1);
+        		Main.setSquare(ranX, ranY, ranT, ranId);
+            }
+    	}
 	}
 }

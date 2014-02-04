@@ -43,7 +43,7 @@ public class Main {
 		display.init();
 		
 		//for the devs - runs the testing stuffs
-//		testingSuite();
+		testingSuite();
 		
 		//comment out when you don't want blocks to fall
 		Time.threadTimeStart();		
