@@ -56,18 +56,4 @@ public class Square {
 		//checks to see whether the tetrimoId of 2 squares are the same
 		return s1.tetrimoId == s2.tetrimoId && s1.type == s2.type;
 	}
-	
-	public static void randomPlace() {
-    	// randomize resets the grid with randomly generated cells
-    	for (int x = 0; x < Main.gameWidth; x++) {
-            for (int y = 0; y < Main.gameHeight; y++) {
-        		int ranX = (int) Math.random() * Main.gameWidth;
-        		int ranY = (int) Math.random() * Main.gameHeight;
-        		int ranT = (int) Math.random() * 8;
-        		int ranId = (int) Math.random() * 100;
-        		
-        		Main.setSquare(ranX, ranY, ranT, ranId);
-            }
-    	}
-	}
 }

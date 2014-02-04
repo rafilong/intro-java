@@ -42,8 +42,17 @@ public class Main {
 		//initializes the grid
 		display.init();
 		
-		//for the devs - runs the testing stuffs
-		testingSuite();
+		//sets squares to values (x, y, type, tetrimoId)
+		setSquare(0, 1, 0, 0);
+		setSquare(1, 4, 1, 1);
+		setSquare(2, 10, 3, 0);
+		setSquare(3, 2, 3, 0);
+		setSquare(4, 5, 4, 1);
+		setSquare(5, 17, 5, 0);
+		setSquare(6, 6, 4, 1);
+		setSquare(7, 13, 4, 0);
+		setSquare(8, 7, 2, 1);
+		setSquare(9, 19, 1, 0);
 		
 		//comment out when you don't want blocks to fall
 		Time.threadTimeStart();		
@@ -65,20 +74,6 @@ public class Main {
 		Grid.grid[x][y].tetrimoId = 0;
 		Grid.grid[x][y].type = type;
 		Grid.grid[x][y].tetrimoId = id;
-	}
-	
-	public static void testingSuite() {
-		//sets squares to values (x, y, type, tetrimoId)
-		setSquare(0, 1, 0, 0);
-		setSquare(1, 4, 1, 1);
-		setSquare(2, 10, 3, 0);
-		setSquare(3, 2, 3, 0);
-		setSquare(4, 5, 4, 1);
-		setSquare(5, 17, 5, 0);
-		setSquare(6, 6, 4, 1);
-		setSquare(7, 13, 4, 0);
-		setSquare(8, 7, 2, 1);
-		setSquare(9, 19, 1, 0);
 	}
 	
 	private static void testCase() {

@@ -66,7 +66,7 @@ public class Square {
         		int ranT = (int) Math.random() * 8;
         		int ranId = (int) Math.random() * 100;
         		
-        		Main.setSquare(ranX, ranY, ranT, ranId);
+        		Main.setSquare(ranX, ranY, ranT, randId);
             }
     	}
 	}
