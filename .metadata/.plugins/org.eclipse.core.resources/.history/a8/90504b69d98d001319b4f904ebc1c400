@@ -23,17 +23,14 @@ public class Main {
 
 	
 	public static void main(String[] args) {
-		//initializes game (starts the boolean)
 		gameOn = true;
-		
-		//makes the frame
+				
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(imgWidth + 16, imgHeight + 38);
 		frame.setLocation(200, 100);
 		frame.setVisible(true);
 		
-		//adds the display to the frame
 		frame.add(display);
 		
 		//fills the grid with squares

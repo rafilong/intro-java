@@ -1,9 +1,0 @@
-
-public class Time implements Runnable {
-
-	public static void timeKeeping() {
-		while (Main.gameon) {
-			Main.display.repaint();
-		}
-	}
-}
