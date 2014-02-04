@@ -108,6 +108,7 @@ public class Main {
 		newLine();
 		newLine();
 		
+		
 		//test cases for method 2 - Square.neighborfind()
 		System.out.println("Method 2 Test Cases");
 		System.out.println("calls Square.neighborfind(), which takes an x value, y value, and a side as arguments. It then searches the side indicated for whether it has a square, and whether the square shares the same tetrimoid. It returns a boolean for true if the tetrimo id is the same for the neighbor and the neighbor has a square");
@@ -126,9 +127,11 @@ public class Main {
 		}
 		newLine();
 		
-		System.out.println("Method 2 Test 2: Squares in [4][1] and [5][1] with the same id; (1, 1, 'right') -> true");
-		System.out.println("Test 2 Return: " + Square.neighborFind(4, 5, "right"));
-		if (Square.neighborFind(4, 5, "right")) {
+		System.out.println("Method 2 Test 2: Squares in [4][1] and [5][1] with the same id; (4, 1, 'right') -> true");
+		setSquare(4, 1, 2, 4);
+		setSquare(5, 1, 2, 4);
+		System.out.println("Test 2 Return: " + Square.neighborFind(4, 1, "right"));
+		if (Square.neighborFind(4, 1, "right")) {
 			success++;
 			methodSuccess++;
 			System.out.println("Method 2 Test 2 succeeded");
@@ -137,9 +140,11 @@ public class Main {
 		}
 		newLine();
 		
-		System.out.println("Method 1 Test 3: Squares in [1][1] and [2][1] with the same id; (1, 1, 'left') -> false");
-		System.out.println("Test 3 Return: " + Square.neighborFind(1, 1, "top"));
-		if (Square.neighborFind(1, 1, "left")) {
+		System.out.println("Method 2 Test 3: Squares in [5][5] and [4][5] with the same id; (5, 5, 'left') -> true");
+		setSquare(5, 5, 3, 42);
+		setSquare(4, 5, 3, 42);
+		System.out.println("Test 3 Return: " + Square.neighborFind(5, 5, "left"));
+		if (Square.neighborFind(5, 5, "left")) {
 			success++;
 			methodSuccess++;
 			System.out.println("Method 2 Test 3 succeeded");
@@ -152,6 +157,9 @@ public class Main {
 		
 		newLine();
 		newLine();
+		
+		
+		
 	}
 	
 	private static void newLine() {
