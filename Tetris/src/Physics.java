@@ -24,12 +24,38 @@ public class Physics {
 				belowSquare.active = true;
 				belowSquare.tetrimoId = Grid.grid[x][y].tetrimoId;
 				belowSquare.type = Grid.grid[x][y].type;
-				
-				square.hasSquare = false;
-				square.active = false;
-				square.tetrimoId = 0;
-				square.type = 0;
+		
+				removeSquare (square);
 			}
+		}
+	}
+	
+	public static void removeSquare(Square square) {
+		//remoes the square by erasing all of the square's files
+		square.hasSquare = false;
+		square.active = false;
+		square.tetrimoId = 0;
+		square.type = 0;
+		square.leftN = false;
+		square.rightN = false;
+		square.topN = false;
+		square.bottomN = false;
+	}
+	
+	public static void clearLineCheck() {
+		int squaresInLine;
+		for (int y = 0; y < Main.gameHeight; y++) {
+			squaresInLine = 0;
+			for (int x = 0; x < Main.gameWidth; x++) {
+				if (Grid.grid[x][y].hasSquare) squaresInLine++;
+			}
+			if (squaresInLine == Main.gameWidth) clearLine(y);
+		}
+	}
+	
+	public static void clearLine(int yclear) {
+		for (int x = 0; x < Main.gameWidth; x++) {
+			removeSquare(Grid.grid[x][yclear]);
 		}
 	}
 }

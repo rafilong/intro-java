@@ -65,6 +65,8 @@ public class Display extends JComponent {
 	}
 	
 	private static void paintGame(Graphics g) {
+		//calls Square.findNeighbor() to find neighbors when drawing edges
+		Square.neighborFindCall();
 		//runs through the grid and draws them if there is a square there
 		for (int w = 0; w < Main.gameWidth; w++) {
 			for (int h = 0; h < Main.gameHeight - 2; h++) {

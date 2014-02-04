@@ -3,19 +3,16 @@
 import java.awt.Color;
 
 
-public class Square {
-	boolean hasSquare = false;
-	
+public class Square {	
 	//square variables
 	int tetrimoId; //the id of the tetrimo
 	int type; //type of square (decides the color)
-	int xLoca; //x coordinate (is it necessary?)
-	int yLoca; //y coordinate (is it necessary?)
 	boolean leftN = false; //whether or not it has a left neighbor
 	boolean rightN = false; //whether or not it has a right neighbor
 	boolean topN = false; //whether or not it has a top neighbor
 	boolean bottomN = false; //whether or not it has a bottom neighbor
 	boolean active = false; //whether or not the tetrimo is active
+	boolean hasSquare = false; //whether or not the square actually has a "square" in it
 	
 	public Square() {
 		//variables will be declared using settet()
@@ -42,13 +39,13 @@ public class Square {
 		boolean retval = false;
 		
 		if (side.equals("left")) {
-			if (sameTetrimoId(Grid.grid[x][y], Grid.grid[x-1][y]) && Grid.grid[x-1][y].hasSquare) retval = true;
+			if (x != 0 && sameTetrimoId(Grid.grid[x][y], Grid.grid[x-1][y]) && Grid.grid[x-1][y].hasSquare) retval = true;
 		} if (side.equals("right")) {
-			if (sameTetrimoId(Grid.grid[x][y], Grid.grid[x+1][y]) && Grid.grid[x+1][y].hasSquare) retval = true;
+			if (x != Main.gameWidth && sameTetrimoId(Grid.grid[x][y], Grid.grid[x+1][y]) && Grid.grid[x+1][y].hasSquare) retval = true;
 		} if (side.equals("top")) {
-			if (sameTetrimoId(Grid.grid[x][y], Grid.grid[x][y+1]) && Grid.grid[x][y+1].hasSquare) retval = true;
+			if (y+1 != Main.gameHeight && sameTetrimoId(Grid.grid[x][y], Grid.grid[x][y+1]) && Grid.grid[x][y+1].hasSquare) retval = true;
 		} if (side.equals("bottom")) {
-			if (sameTetrimoId(Grid.grid[x][y], Grid.grid[x][y-1]) && Grid.grid[x][y-1].hasSquare) retval = true;
+			if (y != 0 && sameTetrimoId(Grid.grid[x][y], Grid.grid[x][y-1]) && Grid.grid[x][y-1].hasSquare) retval = true;
 		}
 		
 		//retval is changed to true when there are neighbors
@@ -57,6 +54,6 @@ public class Square {
 	
 	public static boolean sameTetrimoId(Square s1, Square s2) {
 		//checks to see whether the tetrimoId of 2 squares are the same
-		return s1.tetrimoId == s2.tetrimoId;
+		return s1.tetrimoId == s2.tetrimoId && s1.type == s2.type;
 	}
 }

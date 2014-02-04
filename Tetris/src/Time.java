@@ -25,14 +25,16 @@ public class Time implements Runnable {
 	public static void timeKeeping() {
 		//the startTime helps keep track of how much time has passed since the loop started, which keeps the computer's performance from effecting game speed
 		long startTime = System.currentTimeMillis();
+		Main.display.repaint();
 		sleep(startTime);
 		
 		//a loop that calls methods after every drop
 		while (Main.gameOn) {
 			startTime = System.currentTimeMillis();
-			Main.display.repaint();
 			
 			Physics.dropCall();
+			Square.neighborFindCall();
+			Main.display.repaint();
 			
 			sleep(startTime);
 		}

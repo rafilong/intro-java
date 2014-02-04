@@ -42,10 +42,11 @@ public class Main {
 		//initializes the grid
 		display.init();
 		
-		setSquare(2, 20, 4, 0);
+		//sets squares to values (x, y, type, tetrimoId)
+		setSquare(2, 2, 3, 0);
 		
 		//comment out when you don't want blocks to fall
-		Time.threadTimeStart();
+		Time.threadTimeStart();		
 	}
 	
 	public static void createSquares() {
