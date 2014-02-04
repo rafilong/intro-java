@@ -3,9 +3,11 @@
 import javax.swing.JFrame;
 
 public class Main {
-	//game and image dimensions
+	//image dimensions for the background
 	public static int imgWidth = 204;
 	public static int imgHeight = 406;
+	
+	//game dimensions - how many squares make up the game
 	public static int gameWidth = 10;
 	public static int gameHeight = 24;
 		
