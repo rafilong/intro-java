@@ -1,0 +1,10 @@
+
+public class Tetrimo {
+	public static void spawnTet(int type) {
+		
+	}
+	
+	private static void spawnI() {
+		
+	}
+}

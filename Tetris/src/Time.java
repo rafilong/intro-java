@@ -34,19 +34,20 @@ public class Time implements Runnable {
 		while (Main.gameOn) {
 			startTime = System.currentTimeMillis();
 			
-			Physics.clearLineCheck();
 			Physics.dropCall();
 			Square.neighborFindCall();
-			Main.display.repaint();
-			
-			sleep(startTime);
-			
+						
 			//random place stuff
 			rantime++;
 			if(rantime > -1) {
-				Square.randomPlace();
+				Physics.randomPlace();
 				rantime = 0;
 			}
+			
+			Main.display.repaint();
+			Physics.clearLineCheck();
+			
+			sleep(startTime);
 		}
 	}
 	
