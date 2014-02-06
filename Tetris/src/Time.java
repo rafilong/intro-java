@@ -43,7 +43,7 @@ public class Time implements Runnable {
 			
 			//random place stuff
 			rantime++;
-			if(rantime > 3) {
+			if(rantime > -1) {
 				Square.randomPlace();
 				rantime = 0;
 			}

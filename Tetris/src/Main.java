@@ -55,7 +55,10 @@ public class Main {
 //		testingSuite();
 		
 		//comment out when you don't want blocks to fall
-		Time.threadTimeStart();		
+//		Time.threadTimeStart();		
+		
+		setSquare(1, gameHeight -3, 1, 1);
+		setSquare(1, gameHeight -2, 1, 1);
 	}
 	
 	public static void createSquares() {
