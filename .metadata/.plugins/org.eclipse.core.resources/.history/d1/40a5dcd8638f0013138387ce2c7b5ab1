@@ -69,7 +69,7 @@ public class Display extends JComponent {
 		Square.neighborFindCall();
 		//runs through the grid and draws them if there is a square there
 		for (int w = 0; w < Main.gameWidth; w++) {
-			for (int h = 0; h < Main.gameHeight -2; h++) {
+			for (int h = 0; h < Main.gameHeight; h++) {
 				if (Grid.grid[w][h].hasSquare) paintTetrimo(g, w, h);
 			}
 		}

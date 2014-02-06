@@ -13,19 +13,6 @@ public class Tetrimo {
 		}
 	}
 	
-	public static void spawnTet(String type) {
-		if (type.equals("I")) spawnI();
-		if (type.equals("J")) spawnJ();
-		if (type.equals("L")) spawnL();
-		if (type.equals("O")) spawnO();
-		if (type.equals("S")) spawnS();
-		if (type.equals("T")) spawnT();
-		if (type.equals("Z")) spawnZ();
-		else {
-			System.out.println("Not valid tetrimo type");
-		}
-	}
-	
 	private static void spawnI() {
 		
 	}

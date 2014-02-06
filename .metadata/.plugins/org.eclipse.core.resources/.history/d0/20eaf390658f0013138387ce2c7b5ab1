@@ -49,7 +49,7 @@ public class Time implements Runnable {
 			
 			sleep(startTime);
 			
-			if (levWait[Levels.level -1]-(startTime-System.currentTimeMillis()) <= 0) {
+			if (levWait[Levels.level -1]-(startTime-System.currentTimeMillis()) < 0) {
 				System.out.println("Did the time change, or is the game falling behind?");
 			}
 		}
