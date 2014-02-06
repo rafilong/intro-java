@@ -21,7 +21,7 @@ public class Square {
 	public static void neighborFindCall() {
 		//calls to find whether there are neighbors in all of the squares - neighbors are counted by having the same tetrimoId and being active
 		for (int x = 0; x < Main.gameWidth; x++) {
-			for (int y = 0; y < Main.gameHeight -2; y++) {
+			for (int y = 0; y < Main.gameHeight; y++) {
 				if (Grid.grid[x][y].hasSquare) {
 					//calls the Square.neighborFind() method, which searches for neighbors
 					Grid.grid[x][y].leftN = neighborFind(x, y, "left");
