@@ -1,13 +1,5 @@
-/*
- * Tetris Fusion
- * 
- * Made by Rafi Long
- * Based on the Tetris Worlds game
- * 
- */
-
-
 //Documentation of the methods are in the method
+//Made by Rafi Long
 
 import javax.swing.JFrame;
 
