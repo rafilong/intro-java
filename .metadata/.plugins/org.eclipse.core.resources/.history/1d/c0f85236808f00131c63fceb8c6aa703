@@ -1,3 +1,12 @@
+/*
+ * Tetris Fusion
+ * 
+ * Made by Rafi Long
+ * Based on the Tetris Worlds game
+ * 
+ */
+
+
 //Documentation of the methods are in the method
 
 import javax.swing.JFrame;
@@ -9,7 +18,7 @@ public class Main {
 	
 	//game dimensions - how many squares make up the game
 	public static int gameWidth = 10;
-	public static int gameHeight = 24;
+	public static int gameHeight = 22;
 		
 	//makes the game fullscreen (these variables will be the size of the screen)
 	public static int currentWinX = 0;
@@ -37,35 +46,20 @@ public class Main {
 		frame.add(display);
 		
 		//fills the grid with squares
-		createSquares();
+		Square.createSquares();
 		
 		//initializes the grid
 		display.init();
 		
-		setSquare(2, 20, 4, 0);
-		
-		//commented out as this messes up the test cases that involve neighbors
-		Time.threadTimeStart();
-	
-		testCase();
+		//for the devs - runs the testing stuffs
+//		testingSuite();
+				
+		//comment out when you don't want blocks to fall
+		Time.threadTimeStart();		
 	}
 	
-	public static void createSquares() {
-		//creates squares
-		for (int x = 0; x < gameWidth; x++) {
-			for (int y = 0; y < gameHeight; y++) {
-				Grid.grid[x][y] = new Square();
-			}
-		}
-	}
-	
-	public static void setSquare(int x, int y, int type, int id) {
-		//sets the values of the squares, only for testing purposes
-		Grid.grid[x][y].hasSquare = true;
-		Grid.grid[x][y].active = true;
-		Grid.grid[x][y].tetrimoId = 0;
-		Grid.grid[x][y].type = type;
-		Grid.grid[x][y].tetrimoId = id;
+	public static void testingSuite() {
+		//sets squares to values (x, y, type, tetrimoId)
 	}
 	
 	private static void testCase() {
@@ -128,8 +122,8 @@ public class Main {
 		newLine();
 		
 		System.out.println("Method 2 Test 1: Squares in [1][1] and [1][2] with the same id; (1, 1, 'top') -> true");
-		setSquare(1, 1, 1, 1);
-		setSquare(1, 2, 1, 1);
+		Square.setSquare(1, 1, 1, 1);
+		Square.setSquare(1, 2, 1, 1);
 		System.out.println("Return: " + Square.neighborFind(1, 1, "top"));
 		if (Square.neighborFind(1, 1, "top")) {
 			success++;
@@ -141,8 +135,8 @@ public class Main {
 		newLine();
 		
 		System.out.println("Method 2 Test 2: Squares in [4][1] and [5][1] with the same id; (4, 1, 'right') -> true");
-		setSquare(4, 1, 2, 4);
-		setSquare(5, 1, 2, 4);
+		Square.setSquare(4, 1, 2, 4);
+		Square.setSquare(5, 1, 2, 4);
 		System.out.println("Test 2 Return: " + Square.neighborFind(4, 1, "right"));
 		if (Square.neighborFind(4, 1, "right")) {
 			success++;
@@ -154,8 +148,8 @@ public class Main {
 		newLine();
 		
 		System.out.println("Method 2 Test 3: Squares in [5][5] and [4][5] with the same id; (5, 5, 'left') -> true");
-		setSquare(5, 5, 3, 42);
-		setSquare(4, 5, 3, 42);
+		Square.setSquare(5, 5, 3, 42);
+		Square.setSquare(4, 5, 3, 42);
 		System.out.println("Test 3 Return: " + Square.neighborFind(5, 5, "left"));
 		if (Square.neighborFind(5, 5, "left")) {
 			success++;

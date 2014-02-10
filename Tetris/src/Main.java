@@ -18,7 +18,7 @@ public class Main {
 	
 	//game dimensions - how many squares make up the game
 	public static int gameWidth = 10;
-	public static int gameHeight = 22;
+	public static int gameHeight = 24;
 		
 	//makes the game fullscreen (these variables will be the size of the screen)
 	public static int currentWinX = 0;

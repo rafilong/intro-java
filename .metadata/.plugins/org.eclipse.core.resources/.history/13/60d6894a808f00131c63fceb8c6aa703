@@ -61,14 +61,16 @@ public class Physics {
 	
 	public static void randomPlace() {
     	// randomize resets the grid with randomly generated cells
-        double ranX = Math.random() * Main.gameWidth;
+        double ranX = Math.random() * (Main.gameWidth+4);
         double ranT = Math.random() * 7;
         double ranId = Math.random() * 100;
         
         int ranXI = (int) ranX;
         int ranTI = (int) ranT;
         int ranIdI = (int) ranId;
-                
-        Square.setSquare(ranXI, Main.gameHeight-2, ranTI, 1);
+        
+        if (ranXI >= Main.gameWidth) ranXI = Main.gameWidth -1;
+        
+        Square.setSquare(ranXI, 21, ranTI, 1);
 	}
 }
