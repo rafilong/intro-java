@@ -68,7 +68,13 @@ public class Physics {
         int ranXI = (int) ranX;
         int ranTI = (int) ranT;
         int ranIdI = (int) ranId;
+<<<<<<< HEAD
                 
         Square.setSquare(ranXI, Main.gameHeight-2, ranTI, 1);
+=======
+        
+        
+        Square.setSquare(ranXI, 21, ranTI, 1);
+>>>>>>> 5f921d2b01a2f0c51bb6ee79cca957eee803c043
 	}
 }
