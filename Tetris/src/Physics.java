@@ -2,7 +2,7 @@
 
 //Documentation of the methods are in the method
 public class Physics {
-	
+
 	public static void dropCall() {
 		//loops through all of the squares in the grid, calling Physics.drop() to drop them all
 		for (int x = 0; x < Main.gameWidth; x++) {
@@ -11,7 +11,7 @@ public class Physics {
 			}
 		}
 	}
-	
+
 	public static void drop(int x, int y) {
 		//drops squares if they are either at the bottom, or have a square beneath them
 		//drops are done by moving all of the square's information to the square below
@@ -19,17 +19,17 @@ public class Physics {
 			if (y-1 >= 0 && !Grid.grid[x][y -1].hasSquare) {
 				Square square = Grid.grid[x][y];
 				Square belowSquare = Grid.grid[x][y -1];
-				
+
 				belowSquare.hasSquare = true;
 				belowSquare.active = true;
 				belowSquare.tetrimoId = Grid.grid[x][y].tetrimoId;
 				belowSquare.type = Grid.grid[x][y].type;
-		
+
 				removeSquare (square);
 			}
 		}
 	}
-	
+
 	public static void removeSquare(Square square) {
 		//removes the square by erasing all of the square's files
 		square.hasSquare = false;
@@ -41,7 +41,7 @@ public class Physics {
 		square.topN = false;
 		square.bottomN = false;
 	}
-	
+
 	public static void clearLineCheck() {
 		int squaresInLine;
 		for (int y = 0; y < Main.gameHeight; y++) {
@@ -52,16 +52,16 @@ public class Physics {
 			if (squaresInLine == Main.gameWidth) clearLine(y);
 		}
 	}
-	
+
 	public static void clearLine(int yclear) {
 		for (int x = 0; x < Main.gameWidth; x++) {
 			removeSquare(Grid.grid[x][yclear]);
 		}
 	}
-	
+
 	public static void randomPlace() {
     	// randomize resets the grid with randomly generated cells
-        double ranX = Math.random() * (Main.gameWidth+4);
+        double ranX = Math.random() * Main.gameWidth;
         double ranT = Math.random() * 7;
         double ranId = Math.random() * 100;
         
@@ -69,7 +69,6 @@ public class Physics {
         int ranTI = (int) ranT;
         int ranIdI = (int) ranId;
         
-        if (ranXI >= Main.gameWidth) ranXI = Main.gameWidth -1;
         
         Square.setSquare(ranXI, 21, ranTI, 1);
 	}
