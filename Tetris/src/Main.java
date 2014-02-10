@@ -20,7 +20,11 @@ public class Main {
 	public static int gameWidth = 10;
 	public static int gameHeight = 24;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 5f921d2b01a2f0c51bb6ee79cca957eee803c043
 =======
 
 >>>>>>> 5f921d2b01a2f0c51bb6ee79cca957eee803c043
