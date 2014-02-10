@@ -12,10 +12,6 @@ public class Levels {
 	
 	//when the game ends, the score is added to the high score with this method
 	public static void newScore(int score) {
-		//checks to see whether or not there is a new high score
-		newHighScore(score);
-		
-		//adds the score to the treeset
 		highScores.add(score);
 	}
 	

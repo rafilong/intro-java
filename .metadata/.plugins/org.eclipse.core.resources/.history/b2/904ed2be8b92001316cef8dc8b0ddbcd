@@ -9,9 +9,6 @@
 
 //Documentation of the methods are in the method
 
-//http://en.wikipedia.org/wiki/Binomial_coefficient
-//probability of of blocks landing in a configuration
-
 import javax.swing.JFrame;
 
 public class Main {
