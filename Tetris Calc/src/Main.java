@@ -8,8 +8,8 @@ public class Main {
 	public static int imgHeight = 406;
 	
 	//game dimensions - how many squares make up the game
-	public static int gameWidth = 10;
-	public static int gameHeight = 24;
+	public static int gameWidth = 100;
+	public static int gameHeight = 240;
 		
 	//makes the game fullscreen (these variables will be the size of the screen)
 	public static int currentWinX = 0;

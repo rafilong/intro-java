@@ -59,7 +59,7 @@ public class Display extends JComponent {
 	
 	public void paintComponent(Graphics g) {
 		//draws the image
-		g.drawImage(background, 0, 0, null);
+//		g.drawImage(background, 0, 0, null);
 		//paints the tetrimos
 		paintGame(g);
 	}
@@ -79,9 +79,7 @@ public class Display extends JComponent {
 		//sets the color to the dark type color
 		g.setColor(colors[0][Grid.grid[x][y].type]);
 		//draws from the top-left to the bottom-right
-		g.fillRect(xOffset + x*16, findY(y) - 16, 16, 16);
-		
-		drawEdges(g, x, y);
+		g.fillRect(xOffset + x, findY(y) - 16, 2, 2);
 	}
 	
 	private static void drawEdges(Graphics g, int x, int y) {
@@ -100,7 +98,7 @@ public class Display extends JComponent {
 	public static int findY(int y) {
 		//finds the y value of the coordinate
 		//the reason this is necessary is that java draws the Y going down, but I have my grid-Y goes up - this translates it
-		return (Main.imgHeight - yOffset - y*squareDim);
+		return (Main.imgHeight - yOffset - y);
 	}
 	
 	private static void drawline(Graphics g, int x, int y, String side) {
