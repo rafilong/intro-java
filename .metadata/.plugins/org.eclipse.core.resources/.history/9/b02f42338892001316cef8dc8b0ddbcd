@@ -67,8 +67,12 @@ public class Physics {
         
         int ranXI = (int) ranX;
         int ranTI = (int) ranT;
+<<<<<<< HEAD
         int ranIdI = (int) ranId;        
+=======
+        int ranIdI = (int) ranId;
         
+>>>>>>> 5f921d2b01a2f0c51bb6ee79cca957eee803c043
         
         Square.setSquare(ranXI, 21, ranTI, 1);
 	}
