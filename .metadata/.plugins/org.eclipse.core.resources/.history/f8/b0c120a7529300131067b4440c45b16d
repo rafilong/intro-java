@@ -48,8 +48,7 @@ public class Time implements Runnable {
 			//random place stuff
 			rantime++;
 			if(rantime > 4) {
-				Tetrimo.spawnTet(0);
-				rantime = 0;
+//				Tetrimo.spawnTet(0);
 			}
 			
 			Main.display.repaint();

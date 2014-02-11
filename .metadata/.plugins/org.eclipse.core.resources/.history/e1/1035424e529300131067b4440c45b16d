@@ -6,7 +6,7 @@
 import java.util.TreeSet;
 
 public class Levels {
-	public static int level = 9;
+	public static int level = 1;
 	//this TreeSet stores all the scores, and will sort them on which ones the highest + duplicate scores will be deleted
 	public static TreeSet<Integer> highScores = new TreeSet<Integer>();
 	

@@ -15,7 +15,7 @@ public class Tetrimo {
 		if (type == 4) spawnS();
 		if (type == 5) spawnT();
 		if (type == 6) spawnZ();
-		if (type > 6) {
+		else {
 			System.out.println("Not valid tetrimo type");
 		}
 		
@@ -23,21 +23,14 @@ public class Tetrimo {
 	}
 	
 	public static void spawnTet(String type) {
-		if (type.equals("I")) {
-			spawnI();
-		} else if (type.equals("J")) {
-			spawnJ();
-		} else if (type.equals("L")) {
-			spawnL();
-		} else if (type.equals("O")) {
-			spawnO();
-		} else if (type.equals("S")) {
-			spawnS();
-		} else if (type.equals("T")) {
-			spawnT();
-		} else if (type.equals("Z")) {
-			spawnZ();
-		} else {
+		if (type.equals("I")) spawnI();
+		if (type.equals("J")) spawnJ();
+		if (type.equals("L")) spawnL();
+		if (type.equals("O")) spawnO();
+		if (type.equals("S")) spawnS();
+		if (type.equals("T")) spawnT();
+		if (type.equals("Z")) spawnZ();
+		else {
 			System.out.println("Not valid tetrimo type");
 		}
 		
@@ -45,10 +38,10 @@ public class Tetrimo {
 	}
 	
 	private static void spawnI() {
-		Square.setSquare((Main.gameWidth/2)-2, Main.gameHeight-2, 0, currentId);
 		Square.setSquare((Main.gameWidth/2)-1, Main.gameHeight-2, 0, currentId);
 		Square.setSquare((Main.gameWidth/2), Main.gameHeight-2, 0, currentId);
 		Square.setSquare((Main.gameWidth/2)+1, Main.gameHeight-2, 0, currentId);
+		Square.setSquare((Main.gameWidth/2)+2, Main.gameHeight-2, 0, currentId);
 
 	}
 	

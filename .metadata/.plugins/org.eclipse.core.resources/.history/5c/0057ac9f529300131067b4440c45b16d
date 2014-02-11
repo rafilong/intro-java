@@ -45,10 +45,10 @@ public class Tetrimo {
 	}
 	
 	private static void spawnI() {
-		Square.setSquare((Main.gameWidth/2)-2, Main.gameHeight-2, 0, currentId);
 		Square.setSquare((Main.gameWidth/2)-1, Main.gameHeight-2, 0, currentId);
 		Square.setSquare((Main.gameWidth/2), Main.gameHeight-2, 0, currentId);
 		Square.setSquare((Main.gameWidth/2)+1, Main.gameHeight-2, 0, currentId);
+		Square.setSquare((Main.gameWidth/2)+2, Main.gameHeight-2, 0, currentId);
 
 	}
 	
