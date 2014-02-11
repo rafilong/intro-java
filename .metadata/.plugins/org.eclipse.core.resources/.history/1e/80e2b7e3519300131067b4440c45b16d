@@ -32,7 +32,6 @@ public class Time implements Runnable {
 	//keeps track of time, and calls methods that need to be called every drop
 	public static void timeKeeping() {
 		//random place stuff
-		int rantime = 0;
 		//the startTime helps keep track of how much time has passed since the loop started, which keeps the computer's performance from effecting game speed
 		startTime = System.currentTimeMillis();
 		Main.display.repaint();
@@ -44,12 +43,6 @@ public class Time implements Runnable {
 			
 			Physics.dropCall();
 			Square.neighborFindCall();
-						
-			//random place stuff
-			rantime++;
-			if(rantime > 2) {
-				Tetrimo.spawnTet(0);
-			}
 			
 			Main.display.repaint();
 			Physics.clearLineCheck();
