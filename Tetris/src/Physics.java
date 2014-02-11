@@ -30,6 +30,10 @@ public class Physics {
 		}
 	}
 
+	public static void move() {
+		
+	}
+	
 	public static void removeSquare(Square square) {
 		//removes the square by erasing all of the square's files
 		square.hasSquare = false;

@@ -1,5 +1,12 @@
+import java.awt.Color;
+
 
 public class Tetrimo {
+	private static int currentId = 0;
+	
+	public static Square[] activeSquares = new Square[4];
+	public static Square activeCenter;
+	
 	public static void spawnTet(int type) {
 		if (type == 0) spawnI();
 		if (type == 1) spawnJ();
@@ -11,6 +18,8 @@ public class Tetrimo {
 		else {
 			System.out.println("Not valid tetrimo type");
 		}
+		
+		currentId++;
 	}
 	
 	public static void spawnTet(String type) {
@@ -24,10 +33,16 @@ public class Tetrimo {
 		else {
 			System.out.println("Not valid tetrimo type");
 		}
+		
+		currentId++;
 	}
 	
 	private static void spawnI() {
-		
+		Square.setSquare((Main.gameWidth/2)-1, Main.gameHeight-2, 0, currentId);
+		Square.setSquare((Main.gameWidth/2), Main.gameHeight-2, 0, currentId);
+		Square.setSquare((Main.gameWidth/2)+1, Main.gameHeight-2, 0, currentId);
+		Square.setSquare((Main.gameWidth/2)+2, Main.gameHeight-2, 0, currentId);
+
 	}
 	
 	private static void spawnJ() {
