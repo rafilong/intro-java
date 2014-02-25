@@ -7,7 +7,7 @@
 
 (session-info "dock" "dock"
     (position 1704 0)
-    (size 210 824)
+    (size 210 832)
     (open-on-exit)
     (aux-info
         (show-image-menu "true")
@@ -37,7 +37,7 @@
                 (tab-style preview)))))
 (session-info "toolbox" "dock"
     (position 150 150)
-    (size 160 824)
+    (size 160 832)
     (open-on-exit)
     (dock
         (book
@@ -46,10 +46,13 @@
                 (tab-style icon)))))
 (session-info "toplevel" "gimp-toolbox-color-dialog"
     (position 175 175))
+(session-info "toplevel" "gimp-file-save-dialog"
+    (position 360 0)
+    (size 890 754))
 (session-info "display" "gimp-empty-image-window"
-    (position 720 450)
+    (position 557 82)
     (size 479 180))
 
-(last-tip-shown 1)
+(last-tip-shown 3)
 
 # end of sessionrc
