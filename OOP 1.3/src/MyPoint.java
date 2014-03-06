@@ -1,3 +1,6 @@
+/*
+ * See TestMyPoint for reading
+ */
 
 public class MyPoint {
 	private int x;
@@ -25,7 +28,7 @@ public class MyPoint {
 		 return Math.sqrt(Math.pow(this.x - another.x, 2) + Math.pow(this.y - another.y, 2));
 	 }
 	
-	public void getXY(int x, int y) {
+	public void setXY(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
