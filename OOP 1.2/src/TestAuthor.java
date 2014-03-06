@@ -3,6 +3,7 @@
  * Code written by Rafi Long
  * Documentation of the code is found in the code
  * The other main method is found in TestBook.java
+ * Run the main in TestBook.java to see the console print
  */
 
 public class TestAuthor {
