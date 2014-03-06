@@ -1,5 +1,8 @@
 /*
  * MyPoint coded by Rafi Long
+ * Documentation of the code is in the code
+ * 
+ * Run main in TestMyPoint for testing
  */
 
 public class TestMyPoint {
