@@ -8,15 +8,21 @@ public class MyCircle {
 	private int radius;
 	
 	public MyCircle(int x, int y, int radius) {
+		//sets center using the MyPoint setXY
 		center.setXY(x, y);
+		//sets the radius with the setter setRadius
 		setRadius(radius);
 	}
 	
 	public MyCircle(MyPoint center, int radius) {
+		//sets the center using this. = 
 		this.center = center;
+		//sets the radius using this. =
+		this.radius = radius;
 	}
 	
 	public int getRadius() {
+		//returns the radius
 		return this.radius;
 	}
 	
@@ -25,6 +31,7 @@ public class MyCircle {
 	}
 	
 	public MyPoint getCenter() {
+		//returns the center
 		return center;
 	}
 	
@@ -33,22 +40,27 @@ public class MyCircle {
 	}
 	
 	public int getCenterX() {
+		//returns the X of center
 		return this.center.getX();
 	}
 	
 	public int getCenterY() {
+		//returns the Y of center
 		return this.center.getY();
 	}
 	
 	public void setCenterXY(int x, int y) {
+		//sets the X and Y of center
 		this.center.setXY(x, y);
 	}
 	
 	public String toString() {
+		//converts the object into a string, with the help of the MyPoint toString method
 		return "Circle @ " + this.getCenter() + " radius=" + this.radius;
 	}
 	
 	public double getArea() {
+		//gets the area with the pi radius^2 formula
 		return Math.PI * Math.pow(radius, 2);
 	}
 }
