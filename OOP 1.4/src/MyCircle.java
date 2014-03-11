@@ -27,6 +27,7 @@ public class MyCircle {
 	}
 	
 	public void setRadius(int radius) {
+		//sets the radius with an int in the argument
 		this.radius = radius;
 	}
 	
@@ -36,21 +37,22 @@ public class MyCircle {
 	}
 	
 	public void setCenter(MyPoint center) {
+		//changes the center with a new object
 		this.center = center;
 	}
 	
 	public int getCenterX() {
-		//returns the X of center
+		//returns the X of center by using .getX from the MyPoint class
 		return this.center.getX();
 	}
 	
 	public int getCenterY() {
-		//returns the Y of center
+		//returns the Y of center by using .getY from the MyPoint class
 		return this.center.getY();
 	}
 	
 	public void setCenterXY(int x, int y) {
-		//sets the X and Y of center
+		//sets the X and Y of center with two ints
 		this.center.setXY(x, y);
 	}
 	
