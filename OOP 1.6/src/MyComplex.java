@@ -52,4 +52,34 @@ public class MyComplex {
 	public double magnitude() {
 		return Math.sqrt(Math.pow(this.getReal(), 2) + Math.pow(this.getImag(), 2));
 	}
+	
+	public double argumentInRadians() {
+		return Math.atan2(this.getImag(), this.getReal());
+	}
+	
+	public int argumentInDegrees() {
+		return (int)(this.argumentInRadians()*180/Math.PI);
+	}
+	
+	public MyComplex conjugate() {
+		return new MyComplex(real, -imag);
+	}
+	
+	public MyComplex add(MyComplex another) {
+		return new MyComplex(this.real + another.real, this.imag + another.imag);
+	}
+	
+	public MyComplex subtract(MyComplex another) {
+		return new MyComplex(this.real - another.real, this.imag - another.imag);
+	}
+	
+	public MyComplex multiplyWith(MyComplex another) {
+		double newReal = this.real * another.real - this.imag * another.imag;
+		double newImag = this.real * another.imag + this.imag * another.real; 
+		return new MyComplex(newReal, newImag);
+	}
+	
+	public String divideBy(MyComplex another) {
+		return "you don't want me to do this";
+	}
 }
