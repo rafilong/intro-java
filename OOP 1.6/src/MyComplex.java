@@ -1,3 +1,6 @@
+/*
+ * See MyComplexTest for reading
+ */
 
 public class MyComplex {
 	private double real;
@@ -74,12 +77,15 @@ public class MyComplex {
 	}
 	
 	public MyComplex multiplyWith(MyComplex another) {
-		double newReal = this.real * another.real - this.imag * another.imag;
-		double newImag = this.real * another.imag + this.imag * another.real; 
-		return new MyComplex(newReal, newImag);
+		this.setReal(this.real * another.real - this.imag * another.imag);
+		this.setImag(this.real * another.imag + this.imag * another.real);
+		return this;
 	}
 	
-	public String divideBy(MyComplex another) {
-		return "'you don't want me to do this' *jedi hand sweep*";
+	public MyComplex divideBy(MyComplex another) {
+		double anotherSq = Math.pow(another.getReal(), 2) + Math.pow(another.getImag(), 2);
+		this.setReal(this.multiplyWith(another).getReal() / anotherSq);
+		this.setImag(this.multiplyWith(another).getImag() / anotherSq);
+		return this;
 	}
 }
