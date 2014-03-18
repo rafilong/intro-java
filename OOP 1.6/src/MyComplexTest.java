@@ -1,76 +1,91 @@
 /*
- * OOP Exercise 1.6
- * Code written by Rafi Long
- * 
- * Documentation is in the code
- * Run main() in MyComplexTest to see testing
- * Run main() in MyComplexApp to see program
+ * See MyComplexTest for reading
  */
 
-public class MyComplexTest {
-
-	public static void main(String args[]) {
-		MyComplex complex = new MyComplex(2, 2);
-		MyComplex another = new MyComplex(3, 3);
-		
-		/* Testing getters */
-		System.out.println("Testing getters");
-		System.out.println();
-		
-		System.out.println("Testing getReal: " + complex.getReal());
-		System.out.println("Testing getImag: " + complex.getImag());
-		System.out.println("Testing toString: " + complex);
-		
-		System.out.println();
-		System.out.println();
-		
-		
-		/* Testing setters */
-		System.out.println("Testing setters");
-		System.out.println();
-		
-		System.out.println("Testing setReal");
-		System.out.println("Current real: " + complex.getReal());
-		complex.setReal(5);
-		System.out.println("Changed radius: " + complex.getReal()); 
-		System.out.println();
-		
-		System.out.println("Testing setImag");
-		System.out.println("Current real: " + complex.getImag()); 
-		complex.setImag(5); 
-		System.out.println("Changed radius: " + complex.getImag()); 
-		System.out.println();
-
-		System.out.println("Testing setValue");
-		System.out.println("Current values: " + complex); 
-		complex.setValue(6, 6); 
-		System.out.println("Changed radius: " + complex); 
-		System.out.println();
-
-		System.out.println("Testing multiplyWith");
-		System.out.println("Current values: " + complex); 
-		complex.multiplyWith(another); 
-		System.out.println("Changed radius: " + complex); 
-		System.out.println();
-
-		System.out.println("Testing divideBy");
-		System.out.println("Current real: " + complex); 
-		complex.divideBy(another); 
-		System.out.println("Changed radius: " + complex); 
-		
-		System.out.println();
-		System.out.println();
-
-		
-		/* Testing returns */
-		System.out.println("Testing returns");
-		System.out.println();
-		
-		System.out.println("Testing isReal: " + complex.isReal());
-		System.out.println("Testing isImaginary: " + complex.isImaginary());
-		System.out.println("Testing equals: " + complex.equals(another));
-		System.out.println("Testing magnitude: " + complex.magnitude());
-		System.out.println("Testing argumentInRadians: " + complex.argumentInRadians());
-		System.out.println("Testing arguemntInDegrees: " + complex.argumentInDegrees());
+public class MyComplex {
+	private double real; //the variable for the real number
+	private double imag; //the variable for the imaginary number
+	
+	public MyComplex(double real, double imag) {
+		this.real = real; //sets real to equal real in the argument
+		this.imag = imag; //sets imag to equals imag in the argument
+	}
+	
+	public double getReal() {
+		return this.real; //returns real
+	}
+	
+	public void setReal(double real) {
+		this.real = real; //changes the value of real to the argument
+	}
+	
+	public double getImag() {
+		return this.imag; //returns imag
+	}
+	
+	public void setImag(double imag) {
+		this.imag = imag; //changes the value of imag to the argument
+	}
+	
+	public void setValue(double real, double imag) {
+		this.real = real; //changes the value of real to the argument
+		this.imag = imag; //changes the value of imag to the argument
+	}
+	
+	public String toString() {
+		return "(" + this.real + " + " + this.imag + ")"; //returns a string with the complex number in friendly printing
+	}
+	
+	public boolean isReal() {
+		return (imag == 0); //checks to see whether there is an imaginary number, returns true of not
+	}
+	
+	public boolean isImaginary() {
+		return (imag != 0); //checks to see whether there is an imaginary number, returns true if there is
+	}
+	
+	public boolean equals(double real, double imag) {
+		return (this.getReal() == real && this.getImag() == imag); //sees whether the complex numbers are equal by comparing both real and imag, returns true if both are equal, compares to ints in argument
+	}
+	
+	public boolean equals(MyComplex another) {
+		return this.equals(another.getReal(), another.getImag()); //calls equals(double, double), inserting the other complex numbers values as the argument
+	}
+	
+	public double magnitude() {
+		return Math.sqrt(Math.pow(this.getReal(), 2) + Math.pow(this.getImag(), 2)); //finds the magnitude with the pythagorean theorem (explained in MyComplexTest)
+	}
+	
+	public double argumentInRadians() {
+		return Math.atan2(this.getImag(), this.getReal()); //finds the argument with the tangent (explained in MyComplexTest), in radians
+	}
+	
+	public int argumentInDegrees() {
+		return (int)(this.argumentInRadians()*180/Math.PI); //finds the argument with the tanger (explained in MyComplexTest), in degrees by converting argumentInRadians() to degrees
+	}
+	
+	public MyComplex conjugate() {
+		return new MyComplex(real, -imag); //finds the conjugate, which is the same complex number with the imaginary number reversed
+	}
+	
+	public MyComplex add(MyComplex another) {
+		return new MyComplex(this.real + another.real, this.imag + another.imag); //adds the complex numbers (explained in MyComplexTest)
+	}
+	
+	public MyComplex subtract(MyComplex another) {
+		return new MyComplex(this.real - another.real, this.imag - another.imag); //subtracts the complex numbers (explained in MyComplexTest)
+	}
+	
+	public MyComplex multiplyWith(MyComplex another) {
+		this.setReal(this.real * another.real - this.imag * another.imag); //multiplies the complex numbers (explained in MyComplexTest)
+		this.setImag(this.real * another.imag + this.imag * another.real);
+		return this;
+	}
+	
+	public MyComplex divideBy(MyComplex another) {
+		double anotherSq = Math.pow(another.getReal(), 2) + Math.pow(another.getImag(), 2); //divides the complex numbers (explained in MyComplexTest)
+		this.setReal(this.multiplyWith(another).getReal() / anotherSq);
+		this.setImag(this.multiplyWith(another).getImag() / anotherSq);
+		return this;
 	}
 }
