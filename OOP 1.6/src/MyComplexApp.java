@@ -6,20 +6,41 @@ import java.util.Scanner;
  */
 
 public class MyComplexApp {
-
+	public static String[] trueFalse = {" NOT ", " "}; //an array of strings containing strings used for whether it is true or false (0 false, 1 true)
+	
 	public static void main(String args[]) {
+		//finding variable stuff
 		System.out.print("Enter complex number 1 (real and imaginary part): ");
-		MyComplex complex = newComplex();
-		System.out.println();
+		MyComplex complex = newComplex(); //calls the newComplex class, which opens a scanner and gets user input
+		int complexReal = complex.isReal() ? 1:0; //finds whether the complex is real, and converts it to an int for the use of using the variable trueFalse
+		int complexImag = complex.isImaginary() ? 1:0; //finds whether the complex is imaginary, and converts it to an int for the use of using the variable trueFalse
 		
 		System.out.print("Enter complex number 2 (real and imaginary part): ");
-		MyComplex another = newComplex();
-		System.out.println();
+		MyComplex another = newComplex(); //calls the newComplex class, which opens a scanner and gets user input
+		int anotherReal = another.isReal() ? 1:0; //finds whether the complex is real, and converts it to an int for the use of using the variable trueFalse
+		int anotherImag = another.isImaginary() ? 1:0; //finds whether the complex is imaginary, and converts it to an int for the use of using the variable trueFalse
 		
 		System.out.println();
 		
-		System.out.print("Number 1 is: " + complex);
-		System.out.println(complex + " is " +)
+		//about the numbers (individually)
+		System.out.println("Number 1 is: " + complex); //implicitly calls toString
+		System.out.println(complex + " is" + trueFalse[complexReal] + "a pure real number"); //prints whether it is real or not (using trueFalse)
+		System.out.println(complex + " is" + trueFalse[complexImag] + "a pure imaginary number"); //prints whether it is imaginary or not (using trueFalse)
+		System.out.println();
+		
+		System.out.println("Number 2 is: " + another); //implicitly calls toString
+		System.out.println(another + " is" + trueFalse[anotherReal] + "a pure real number"); //prints whether it is real or not (using trueFalse)
+		System.out.println(another + " is" + trueFalse[anotherImag] + "a pure imaginary number"); //prints whether it is imaginary or not (using trueFalse)
+		System.out.println();
+		
+		//about the numbers (combined)
+		int equal = complex.equals(another) ? 1:0; //calls the equals method, and finds whether complex is equal to another or not (converting to a int for use of using the trueFalse variable)
+		MyComplex added = complex.add(another); //finds what the value of the added variables equal
+		MyComplex subtracted = complex.subtract(another); //finds what the value of the subtracted variables equal
+		
+		System.out.println(complex + " is" + trueFalse[equal] + "equal to " + another);
+		System.out.println(complex + " + " + another + " = " + added);
+		System.out.println(complex + " - " + another + " = " + subtracted);
 	}
 	
 	public static String textEnter() {
