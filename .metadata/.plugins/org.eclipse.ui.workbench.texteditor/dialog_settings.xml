@@ -2,29 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="427" key="DIALOG_Y_ORIGIN"/>
-		<item value="543" key="DIALOG_X_ORIGIN"/>
+		<item value="213" key="DIALOG_Y_ORIGIN"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
+		<item value="1061" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="another" key="selection"/>
+		<item value="getCoeffs().length" key="selection"/>
 		<list key="findhistory">
+			<item value="getCoeffs().length"/>
+			<item value="&#x09;private double[] coeffs;"/>
 			<item value="complex"/>
 			<item value="another"/>
 			<item value="circle"/>
 			<item value="r"/>
 			<item value="xoffset"/>
 			<item value="enum"/>
-			<item value="on"/>
-			<item value="DISPLAY"/>
 		</list>
 		<list key="replacehistory">
+			<item value="getDegree()"/>
 			<item value="another"/>
 			<item value="complex"/>
 		</list>
