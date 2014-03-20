@@ -81,7 +81,7 @@ public class MyComplexTest {
 
 		System.out.println("Testing add");
 		System.out.println("Current values: " + complex); //finds number by implicitly calling toString | return is (6, 6)
-		MyComple added = complex.add(another); //adds the complex number by `another` with multiplyWith
+		MyComplex added = complex.add(another); //adds the complex number by `another` with multiplyWith
 		System.out.println("Changed values: " + added); //finds number by implicitly calling toString | return is (9, 9)
 		System.out.println();
 
