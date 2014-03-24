@@ -1,3 +1,7 @@
+/*
+ * See TestMyPolynomial for reading
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -15,7 +19,7 @@ public class MyPolynomial {
 		try {
 			in = new Scanner(new File(filename)); // open file
 		} catch (FileNotFoundException e) {
-			System.err.println("Could not find file, error found below:");
+			System.err.println("Could not find file, error found below: ");
 			e.printStackTrace();
 		}
 		int degree = in.nextInt(); // read the degree
@@ -66,19 +70,19 @@ public class MyPolynomial {
 	}
 	
 	public MyPolynomial add(MyPolynomial another) {
-		MyPolynomial retval;
+		double[] out;
 		if (this.getDegree() > another.getDegree()) {
-			retval = this;
+			out = new double[this.getDegree() + 1];
 			for (int i = 0; i <= another.getDegree(); i++) {
-				retval.setCoeffs(i, this.getCoeffs(i) + another.getCoeffs(i)); 
+				out[i] = this.getCoeffs(i) + another.getCoeffs(i); 
 			}
 		} else {
-			retval = another;
+			out = new double[another.getDegree() + 1];
 			for (int i = 0; i <= this.getDegree(); i++) {
-				retval.setCoeffs(i, this.getCoeffs(i) + another.getCoeffs(i)); 
+				out[i] = this.getCoeffs(i) + another.getCoeffs(i); 
 			}
 		}
-		return retval;
+		return new MyPolynomial(out);
 	}
 	
 	public MyPolynomial multiply(MyPolynomial another) {
@@ -89,7 +93,6 @@ public class MyPolynomial {
 				out[i+r] += coeffsM;
 			}
 		}
-		MyPolynomial retval = new MyPolynomial(out);
-		return retval;
+		return new MyPolynomial(out);
 	}
 }
