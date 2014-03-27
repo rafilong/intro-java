@@ -53,7 +53,7 @@ public class MyPolynomial {
 		if (coeffs.length > 1) { //prints the primary coefficients (so they won't have the ^1 and ^0)
 			String retval = coeffs[1] + "x + " + coeffs[0];
 			for (int i = 2; i < this.getDegree() + 1; i++) { //a for loop that loops for all of the coefficients
-				retval = this.getCoeffs(i) + "x^" + (i) + " + " + retval; 
+				retval = this.getCoeffs(i) + "x^" + (i) + " + " + retval;  //prints the coefficient in a good way
 			}
 			return retval; //returns the retval
 		} else {
@@ -63,25 +63,25 @@ public class MyPolynomial {
 	
 	public double evaluate(double x) {
 		double retval = 0; //sets retval to equal zero
-		for (int i = 0; i <= this.getDegree(); i++) { //
-			retval += this.getCoeffs(i) * Math.pow(x, i);
+		for (int i = 0; i <= this.getDegree(); i++) { //repeats in the loop for the degrees of the polynomial
+			retval += this.getCoeffs(i) * Math.pow(x, i); //adds the degree solved to the retval
 		}
-		return retval;
+		return retval; //returns the retval
 	}
 	
 	public MyPolynomial add(MyPolynomial another) {
-		double[] out;
-		if (this.getDegree() > another.getDegree()) {
-			out = new double[this.getDegree() + 1];
-			for (int i = 0; i <= this.getDegree(); i++) {
-				if (i > another.getDegree()) {
-					out[i] = this.getCoeffs(i); 
-				} else {
-					out[i] = this.getCoeffs(i) + another.getCoeffs(i); 
+		double[] out; //makes a method named out
+		if (this.getDegree() > another.getDegree()) { //if this is bigger than another
+			out = new double[this.getDegree() + 1]; //out is set to equal the length of this
+			for (int i = 0; i <= this.getDegree(); i++) { //for all the degrees of this
+				if (i > another.getDegree()) { //if i is bigger than another
+					out[i] = this.getCoeffs(i);  //add this to out
+				} else { //if i is less than another and this
+					out[i] = this.getCoeffs(i) + another.getCoeffs(i); //add this and another to out 
 				}
 			}
 		} else {
-			out = new double[another.getDegree() + 1];
+			out = new double[another.getDegree() + 1]; //the same thing as above, vice versa
 			for (int i = 0; i <= this.getDegree(); i++) {
 				if (i > this.getDegree()) {
 					out[i] = another.getCoeffs(i); 
@@ -89,17 +89,17 @@ public class MyPolynomial {
 					out[i] = another.getCoeffs(i) + this.getCoeffs(i); 
 				}			}
 		}
-		return new MyPolynomial(out);
+		return new MyPolynomial(out); //returns a polynomial with the value of out
 	}
 	
 	public MyPolynomial multiply(MyPolynomial another) {
-		double[] out = new double[this.getDegree() + another.getDegree() + 1];
-		for (int i = 0; i <= this.getDegree(); i++) {
-			for (int r = 0; r <= another.getDegree(); r++) {
-				double coeffsM = this.getCoeffs(i) * another.getCoeffs(r);
-				out[i+r] += coeffsM;
+		double[] out = new double[this.getDegree() + another.getDegree() + 1]; //makes a double named out with the degree of this and another added
+		for (int i = 0; i <= this.getDegree(); i++) { //if the loop is less than this
+			for (int r = 0; r <= another.getDegree(); r++) { //if the loop is less than another
+				double coeffsM = this.getCoeffs(i) * another.getCoeffs(r); //multiplies the coefficient of this and another
+				out[i+r] += coeffsM; //adds the above value to a place on out
 			}
 		}
-		return new MyPolynomial(out);
+		return new MyPolynomial(out); //returns a polynomial with the value of out
 	}
 }
