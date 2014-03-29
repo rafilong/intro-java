@@ -1,3 +1,6 @@
+/*
+ * See TestMyTime for reading
+ */
 
 public class MyTime {
 	//instance variables
@@ -52,19 +55,19 @@ public class MyTime {
 	public String toString() {
 		String retval = ""; //makes a new value to return
 		
-		if (this.hour > 10) { //adds the hour, but adds a zero if it is one digit
+		if (this.getHour() > 10) { //adds the hour, but adds a zero if it is one digit
 			retval += hour;
 		} else {
 			retval += "0" + hour;
 		}
 		retval += ":";
-		if (this.minute > 10) { //adds the minute, but adds a zero if it is one digit
+		if (this.getMinute() > 10) { //adds the minute, but adds a zero if it is one digit
 			retval += minute;
 		} else {
 			retval += "0" + minute;
 		}
 		retval += ":";
-		if (this.second > 10) { //adds the second, but adds a zero if it is one digit
+		if (this.getSecond() > 10) { //adds the second, but adds a zero if it is one digit
 			retval += second;
 		} else {
 			retval += "0" + second;
@@ -106,7 +109,7 @@ public class MyTime {
 		if (this.second > 0) { //moves back a second, except when the second is zero
 			this.second--;
 		} else { //if the second is zero, sets the second to 59, and moves back a minute
-			this.second = 59;
+			this.setSecond(59);
 			this.previousMinute();
 		}
 		return this; //returns the time
@@ -116,7 +119,7 @@ public class MyTime {
 		if (this.minute > 0) { //moves back a minute, except when the minute is zero
 			this.minute--;
 		} else { //if the minute is zero, sets the minute to 59, and moves back an hour
-			this.minute = 59;
+			this.setMinute(59);
 			this.previousHour();
 		}
 		return this; //returns the time
@@ -126,7 +129,7 @@ public class MyTime {
 		if (this.hour > 0) { //moves back an hour, except when the hour is zero
 			this.hour--;
 		} else { //if the hour is zero, sets the hour to 23
-			this.hour = 23;
+			this.setHour(23);
 		}
 		return this; //returns the time
 	}
