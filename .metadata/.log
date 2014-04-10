@@ -3865,3 +3865,8 @@ Contains: Resource already exists on disk: 'C:\Users\JavaP4\Desktop\school-java\
 !MESSAGE Problems encountered while moving resources.
 !SUBENTRY 2 org.eclipse.core.resources 1 4 2014-04-10 10:08:43.759
 !MESSAGE Resource already exists on disk: 'C:\Users\JavaP4\Desktop\school-java\OOP 1.9'.
+
+!ENTRY org.eclipse.core.resources 2 2 2014-04-10 10:12:09.929
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2014-04-10 10:12:09.929
+!MESSAGE The project description file (.project) for 'OOP 1.01' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
