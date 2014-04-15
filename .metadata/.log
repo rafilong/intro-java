@@ -3870,3 +3870,13 @@ Contains: Resource already exists on disk: 'C:\Users\JavaP4\Desktop\school-java\
 !MESSAGE Save operation warnings.
 !SUBENTRY 1 org.eclipse.core.resources 2 234 2014-04-10 10:12:09.929
 !MESSAGE The project description file (.project) for 'OOP 1.01' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SESSION 2014-04-15 11:28:13.083 -----------------------------------------------
+eclipse.buildId=4.3.0.I20130605-2000
+java.version=1.6.0_18
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-04-15 11:28:17.258
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

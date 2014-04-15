@@ -8,7 +8,7 @@ public class MyDate {
 	public static String[] strDays = 
 		{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 	public static int[] daysInMonths =
-		{31, 28, 31, 30, 31, 31, 30, 31, 30, 31};	
+		{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};	
 	
 	public MyDate(int year, int month, int day) {
 		if (isValidDate(year, month, day)) {
@@ -29,8 +29,8 @@ public class MyDate {
 	}
 	
 	public static boolean isValidDate(int year, int month, int day) {
-		boolean validYear = year >= 1 &&  year <= 9999;
-		boolean validMonth = month >= 1 && month <= 1;
+		boolean validYear = year >= 1 && year <= 9999;
+		boolean validMonth = month >= 1 && month <= 12;
 		boolean validDay = day >= 1 && day <= daysInMonths[month];
 		
 		if (validYear && validMonth && validDay) {
@@ -51,7 +51,7 @@ public class MyDate {
 		int firstTwo = year / 100;
 		int lastTwo = year % 100;
 		
-		return (lastTwo + 6 - firstTwo % 4 * 2 + lastTwo / 4 + day) % 7;
+		return (lastTwo + (6 - (firstTwo % 4) * 2) + lastTwo / 4 + monthTable[month-1] + day) % 7;
 	}
 	
 	public void setDate(int year, int month, int day) {
@@ -108,10 +108,69 @@ public class MyDate {
 	
 	public String toString() {
 		String[] dayPrefix = {"Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Sat"};
-		return dayPrefix[getDayOfWeek(year, month, day)] + "day " + day + " " + month + " " + year;
+		return dayPrefix[getDayOfWeek(year, month, day)] + "day " + day + " " + strMonths[this.month-1] + " " + year;
 	}
 	
-	public void nextDay() {
-		 
+	public MyDate nextDay() {
+		if (isLeapYear(year) && this.month == 2 && this.day == 28) {
+			this.day = 29;
+			return this;
+		}
+		if (this.day < daysInMonths[month - 1]) {
+			this.day++;
+		} else {
+			this.day = 1;
+			nextMonth();
+		}
+		return this;
+	}
+
+	public MyDate nextMonth() {
+		if (this.month <= 12) {
+			this.month++;
+		} else {
+			this.month = 1;
+			nextYear();
+		}
+		return this;
+	}
+
+	public MyDate nextYear() {
+		this.year++;
+		if (this.month == 2 && this.day == 29) {
+			this.day = 28;
+		}
+		return this;
+	}
+
+	public MyDate previousDay() {
+		if (this.day > 1) {
+			this.day--;
+		} else {
+			previousMonth();
+			this.day = daysInMonths[month-1];
+		}
+		return this;
+	}
+
+	public MyDate previousMonth() {
+		if (this.month > 1) {
+			this.month--;
+			if (this.day > daysInMonths[month-1]) {
+				this.day = daysInMonths[month-1];
+			}
+		} else {
+			this.month = 12;
+			previousYear();
+		}
+		return this;
+	}
+
+	public MyDate previousYear() {
+		this.year--;
+		if (this.month == 2 && this.day == 29) {
+			this.day = 28;
+		}
+		return this;
 	}
 }
